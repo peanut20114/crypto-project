@@ -1,3 +1,4 @@
+
 #include <iostream>
 using std::cout;
 using std::cerr;
@@ -54,6 +55,22 @@ using CryptoPP::GCM;
 
 #include "cryptopp/ccm.h"
 using CryptoPP::CCM;
+
+#ifndef DLL_EXPORT
+    #ifdef _WIN32
+        #define DLL_EXPORT __declspec(dllexport)
+    #else
+        #define DLL_EXPORT
+    #endif
+#endif
+
+extern "C"{
+    DLL_EXPORT void string2byte(std::string input, CryptoPP::byte output[CryptoPP::AES::DEFAULT_KEYLENGTH], size_t outputSize);
+    DLL_EXPORT void file2byte(std::string& filename, CryptoPP::byte output[CryptoPP::AES::DEFAULT_KEYLENGTH]);
+    DLL_EXPORT void AES_Random(const char* option, const char* plaintext);
+    DLL_EXPORT void AES_Encrypt(const char* option, const char* secKey, const char* init_vec, const char* plaintext);
+    DLL_EXPORT void AES_Decrypt(const char* option, const char* secKey, const char* init_vec, const char* ciphertext);
+}
 
 // Function to convert std::string to CryptoPP::byte array
 void string2byte(std::string input, CryptoPP::byte output[CryptoPP::AES::DEFAULT_KEYLENGTH], size_t outputSize) {
