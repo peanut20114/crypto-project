@@ -1,7 +1,32 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\KY4\\Crypto\\project\\crypto-project\\crypto_project\\",
-  "Documents": [],
+  "WorkspaceRootPath": "D:\\UIT\\Cryptography\\crypto-project\\crypto_project\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5FB6E3CA-B572-4D5C-95EF-6E8F9AD69868}|crypto_project\\crypto_project.csproj|d:\\uit\\cryptography\\crypto-project\\crypto_project\\crypto_project\\userid.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FB6E3CA-B572-4D5C-95EF-6E8F9AD69868}|crypto_project\\crypto_project.csproj|solutionrelative:crypto_project\\userid.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FB6E3CA-B572-4D5C-95EF-6E8F9AD69868}|crypto_project\\crypto_project.csproj|d:\\uit\\cryptography\\crypto-project\\crypto_project\\crypto_project\\userid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5FB6E3CA-B572-4D5C-95EF-6E8F9AD69868}|crypto_project\\crypto_project.csproj|solutionrelative:crypto_project\\userid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FB6E3CA-B572-4D5C-95EF-6E8F9AD69868}|crypto_project\\crypto_project.csproj|d:\\uit\\cryptography\\crypto-project\\crypto_project\\crypto_project\\verify_key.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5FB6E3CA-B572-4D5C-95EF-6E8F9AD69868}|crypto_project\\crypto_project.csproj|solutionrelative:crypto_project\\verify_key.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FB6E3CA-B572-4D5C-95EF-6E8F9AD69868}|crypto_project\\crypto_project.csproj|d:\\uit\\cryptography\\crypto-project\\crypto_project\\crypto_project\\sign_up.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5FB6E3CA-B572-4D5C-95EF-6E8F9AD69868}|crypto_project\\crypto_project.csproj|solutionrelative:crypto_project\\sign_up.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FB6E3CA-B572-4D5C-95EF-6E8F9AD69868}|crypto_project\\crypto_project.csproj|d:\\uit\\cryptography\\crypto-project\\crypto_project\\crypto_project\\privatekey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5FB6E3CA-B572-4D5C-95EF-6E8F9AD69868}|crypto_project\\crypto_project.csproj|solutionrelative:crypto_project\\privatekey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FB6E3CA-B572-4D5C-95EF-6E8F9AD69868}|crypto_project\\crypto_project.csproj|d:\\uit\\cryptography\\crypto-project\\crypto_project\\crypto_project\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5FB6E3CA-B572-4D5C-95EF-6E8F9AD69868}|crypto_project\\crypto_project.csproj|solutionrelative:crypto_project\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,15 +34,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 14,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:1:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Bookmark",
@@ -25,21 +50,84 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 386,
-          "SelectedChildIndex": -1,
-          "Children": [
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserID.Designer.cs",
+              "DocumentMoniker": "D:\\UIT\\Cryptography\\crypto-project\\crypto_project\\crypto_project\\UserID.Designer.cs",
+              "RelativeDocumentMoniker": "crypto_project\\UserID.Designer.cs",
+              "ToolTip": "D:\\UIT\\Cryptography\\crypto-project\\crypto_project\\crypto_project\\UserID.Designer.cs",
+              "RelativeToolTip": "crypto_project\\UserID.Designer.cs",
+              "ViewState": "AQIAAIUAAAAAAAAAAAAAwCgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T06:32:49.12Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserID.cs [Design]",
+              "DocumentMoniker": "D:\\UIT\\Cryptography\\crypto-project\\crypto_project\\crypto_project\\UserID.cs",
+              "RelativeDocumentMoniker": "crypto_project\\UserID.cs",
+              "ToolTip": "D:\\UIT\\Cryptography\\crypto-project\\crypto_project\\crypto_project\\UserID.cs [Design]",
+              "RelativeToolTip": "crypto_project\\UserID.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T06:32:33.274Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Verify_Key.cs [Design]",
+              "DocumentMoniker": "D:\\UIT\\Cryptography\\crypto-project\\crypto_project\\crypto_project\\Verify_Key.cs",
+              "RelativeDocumentMoniker": "crypto_project\\Verify_Key.cs",
+              "ToolTip": "D:\\UIT\\Cryptography\\crypto-project\\crypto_project\\crypto_project\\Verify_Key.cs [Design]",
+              "RelativeToolTip": "crypto_project\\Verify_Key.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T06:32:32.068Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Sign_Up.cs [Design]",
+              "DocumentMoniker": "D:\\UIT\\Cryptography\\crypto-project\\crypto_project\\crypto_project\\Sign_Up.cs",
+              "RelativeDocumentMoniker": "crypto_project\\Sign_Up.cs",
+              "ToolTip": "D:\\UIT\\Cryptography\\crypto-project\\crypto_project\\crypto_project\\Sign_Up.cs [Design]",
+              "RelativeToolTip": "crypto_project\\Sign_Up.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T06:32:31.025Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PrivateKey.cs [Design]",
+              "DocumentMoniker": "D:\\UIT\\Cryptography\\crypto-project\\crypto_project\\crypto_project\\PrivateKey.cs",
+              "RelativeDocumentMoniker": "crypto_project\\PrivateKey.cs",
+              "ToolTip": "D:\\UIT\\Cryptography\\crypto-project\\crypto_project\\crypto_project\\PrivateKey.cs [Design]",
+              "RelativeToolTip": "crypto_project\\PrivateKey.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T06:32:29.225Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainForm.cs [Design]",
+              "DocumentMoniker": "D:\\UIT\\Cryptography\\crypto-project\\crypto_project\\crypto_project\\MainForm.cs",
+              "RelativeDocumentMoniker": "crypto_project\\MainForm.cs",
+              "ToolTip": "D:\\UIT\\Cryptography\\crypto-project\\crypto_project\\crypto_project\\MainForm.cs [Design]",
+              "RelativeToolTip": "crypto_project\\MainForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T06:32:07.885Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

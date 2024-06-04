@@ -14,6 +14,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = crypto_project
-build_property.ProjectDir = D:\UIT\HK4_2023-2024\MatMaHoc\FinalProjects\crypto-project\crypto_project\crypto_project\
+build_property.ProjectDir = D:\UIT\Cryptography\crypto-project\crypto_project\crypto_project\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

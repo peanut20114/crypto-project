@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "R91HBMQfvYpjej8DIam9xBNHlwiI5JTY+fXOuqIt264rENYlZkyoxgJAOZESsokiwOZUTiCeNBOJNd1scp0XBg==",
+  "dgSpecHash": "HmZb4gNXjbY=",
   "success": true,
-  "projectFilePath": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\crypto_project\\crypto_project\\crypto_project.csproj",
+  "projectFilePath": "D:\\UIT\\Cryptography\\crypto-project\\crypto_project\\crypto_project\\crypto_project.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
