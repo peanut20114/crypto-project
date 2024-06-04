@@ -46,14 +46,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Main_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Main_Form.Designer.cs">
+      <DependentUpon>Main_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateKey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrivateKey.Designer.cs">
+      <DependentUpon>PrivateKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sign_In.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sign_In.Designer.cs">
+      <DependentUpon>Sign_In.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sign_Up.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sign_Up.Designer.cs">
+      <DependentUpon>Sign_Up.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User_ID.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User_ID.Designer.cs">
+      <DependentUpon>User_ID.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Main_Form.resx">
+      <DependentUpon>Main_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrivateKey.resx">
+      <DependentUpon>PrivateKey.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,7 +92,17 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Sign_In.resx">
+      <DependentUpon>Sign_In.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sign_Up.resx">
+      <DependentUpon>Sign_Up.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_ID.resx">
+      <DependentUpon>User_ID.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -75,6 +115,42 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackGround.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_user .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\id_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\id_icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_user 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_pass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackGround-ngang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-information-BG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\id_icon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key__icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

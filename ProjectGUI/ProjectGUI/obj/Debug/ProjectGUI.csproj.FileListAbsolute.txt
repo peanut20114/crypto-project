@@ -1,0 +1,13 @@
+D:\KY4\Crypto\project\crypto-project\ProjectGUI\ProjectGUI\bin\Debug\ProjectGUI.exe.config
+D:\KY4\Crypto\project\crypto-project\ProjectGUI\ProjectGUI\bin\Debug\ProjectGUI.exe
+D:\KY4\Crypto\project\crypto-project\ProjectGUI\ProjectGUI\bin\Debug\ProjectGUI.pdb
+D:\KY4\Crypto\project\crypto-project\ProjectGUI\ProjectGUI\obj\Debug\ProjectGUI.csproj.AssemblyReference.cache
+D:\KY4\Crypto\project\crypto-project\ProjectGUI\ProjectGUI\obj\Debug\ProjectGUI.Main_Form.resources
+D:\KY4\Crypto\project\crypto-project\ProjectGUI\ProjectGUI\obj\Debug\ProjectGUI.Properties.Resources.resources
+D:\KY4\Crypto\project\crypto-project\ProjectGUI\ProjectGUI\obj\Debug\ProjectGUI.Sign_In.resources
+D:\KY4\Crypto\project\crypto-project\ProjectGUI\ProjectGUI\obj\Debug\ProjectGUI.Sign_Up.resources
+D:\KY4\Crypto\project\crypto-project\ProjectGUI\ProjectGUI\obj\Debug\ProjectGUI.User_ID.resources
+D:\KY4\Crypto\project\crypto-project\ProjectGUI\ProjectGUI\obj\Debug\ProjectGUI.csproj.GenerateResource.cache
+D:\KY4\Crypto\project\crypto-project\ProjectGUI\ProjectGUI\obj\Debug\ProjectGUI.csproj.CoreCompileInputs.cache
+D:\KY4\Crypto\project\crypto-project\ProjectGUI\ProjectGUI\obj\Debug\ProjectGUI.exe
+D:\KY4\Crypto\project\crypto-project\ProjectGUI\ProjectGUI\obj\Debug\ProjectGUI.pdb
