@@ -7,13 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FireSharp.Config;
+using FireSharp.Interfaces;
+using FireSharp.Response;
 
 namespace ProjectGUI
 {
     public partial class Sign_In : Form
     {
+
+        IFirebaseConfig config = new FirebaseConfig
+        {
+            AuthSecret = "GdfCwWCBpxKuxjX1yZfEr3Tplc1VdaS1YsTIuLLR",
+            BasePath = "https://crypto-project-2e5b1-default-rtdb.asia-southeast1.firebasedatabase.app/"
+        };
+
+        IFirebaseClient client;
         public Sign_In()
         {
+            client = new FireSharp.FirebaseClient(config);
             InitializeComponent();
         }
 
@@ -31,6 +43,40 @@ namespace ProjectGUI
         private void tb_password_Click(object sender, EventArgs e)
         {
             tb_password.Text = string.Empty;
+        }
+
+        private async void btn_login_Click(object sender, EventArgs e)
+        {
+            FirebaseResponse res = await client.GetAsync("USER/");
+            dynamic IDs = res.ResultAs<dynamic>();
+            bool loginFlag = false;
+
+            foreach (var id in IDs) 
+            {
+                string userID = id.Name;
+                FirebaseResponse userRes = await client.GetAsync("USER/" + userID);
+                User userData = userRes.ResultAs<User>();
+                string userName = userData.UserName;
+                string userEmail = userData.Email;
+                string userPassword = userData.PassWord;
+
+                if((userName == tb_username.Text) && userPassword == tb_password.Text)
+                {
+                    loginFlag = true;
+                    Program.UserID = userID;
+                    break;
+                }
+            }
+            if (loginFlag)
+            {
+                Main_Form main_Form = new Main_Form();
+                main_Form.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Incorrect username or password, please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
