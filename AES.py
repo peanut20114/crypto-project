@@ -62,19 +62,6 @@ class AES:
             file.write(data)
             
             
-parser = argparse.ArgumentParser(description='Enter the path of the file to encrypt')
-parser.add_argument('choice', help='Encrypt or Decrypt')
-parser.add_argument('input_file', help='Path to the input MP4 file')
-file_name = parser.parse_args().input_file          
-choice = parser.parse_args().choice
-
-script_dir = path.dirname(__file__) #<-- absolute dir the script is in
-rel_path = "/temp/" 
-
-save_path = path.join(script_dir, rel_path)
-print("script path:", script_dir)
-print('abs_file:', save_path)
-
 def generateRandomKeyandIV():
     key = os.urandom(16)
     iv = os.urandom(16)
@@ -84,12 +71,11 @@ def generateRandomKeyandIV():
         file.write(iv) 
     return key, iv
 
-def encryptAESkey(key, private_key, public_key):
-    private_key = serialization.load_der_private_key(private_key, None)
-    public_key = serialization.load_der_public_key(public_key)
-    shared_key = private_key.exchange(ec.ECDH(), public_key)
+def encryptAESkey(key, sender_private_key_pem, receiver_public_key_pem):
+    sender_private_key = serialization.load_pem_private_key(sender_private_key_pem, password=None)
+    receiver_public_key = serialization.load_pem_public_key(receiver_public_key_pem)
+    shared_key = sender_private_key.exchange(ec.ECDH(), receiver_public_key)
 
-    # Perform key derivation.
     derived_key = HKDF(
         algorithm=hashes.SHA256(),
         length=32,
@@ -97,8 +83,7 @@ def encryptAESkey(key, private_key, public_key):
         info=None,
     ).derive(shared_key)
 
-    # Encrypt the AES key with the derived key
-    iv = os.urandom(16) # this iv is used for aes key encryption 
+    iv = os.urandom(16)
     with open('temp/iv.txt', 'wb') as file: 
         file.write(iv)
     cipher = Cipher(algorithms.AES(derived_key), modes.CBC(iv))
@@ -109,12 +94,11 @@ def encryptAESkey(key, private_key, public_key):
     
     return encrypted_aes_key
 
-def decryptAESkey(encrypted_aes_key, private_key, public_key):
-    private_key = serialization.load_der_private_key(private_key, None)
-    public_key = serialization.load_der_public_key(public_key)
-    shared_key = private_key.exchange(ec.ECDH(), public_key)
+def decryptAESkey(encrypted_aes_key, receiver_private_key_pem, sender_public_key_pem):
+    receiver_private_key = serialization.load_pem_private_key(receiver_private_key_pem, password=None)
+    sender_public_key = serialization.load_pem_public_key(sender_public_key_pem)
+    shared_key = receiver_private_key.exchange(ec.ECDH(), sender_public_key)
 
-    # Perform key derivation.
     derived_key = HKDF(
         algorithm=hashes.SHA256(),
         length=32,
@@ -122,7 +106,6 @@ def decryptAESkey(encrypted_aes_key, private_key, public_key):
         info=None,
     ).derive(shared_key)
 
-    # Decrypt the AES key with the derived key
     with open('temp/iv.txt', 'rb') as file: 
         iv = file.read()
     cipher = Cipher(algorithms.AES(derived_key), modes.CBC(iv))
@@ -132,54 +115,57 @@ def decryptAESkey(encrypted_aes_key, private_key, public_key):
     key = unpadder.update(decrypted_data) + unpadder.finalize()
     
     return key
-        
-def encryptVideo(file_name, private_key, public_key):
+
+def encryptVideo(file_name, sender_private_key_path, receiver_public_key_path):
     key, iv = generateRandomKeyandIV()
     aes_bytes = AES.read_file_into_bytes(file_name)
     encrypted_aes_bytes = AES.encrypt(key, iv, aes_bytes)
     
-    # # Your base64 strings
-    # private_key_base64 = "MHcCAQEEIG1tm0lTR0XNgKsu33uyeP4ScxLkJ3ImTvnf3o47riZSoAoGCCqGSM49AwEHoUQDQgAES2cnfMIGauK4mqhTcc0dMXEjLAmcAy9tgJ5wXdCVwfRCrZrk4NdkBDOn2anwvxTMo4nzph8JtVM+ORMWf39ITQ=="
-    # public_key_base64 = "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAES2cnfMIGauK4mqhTcc0dMXEjLAmcAy9tgJ5wXdCVwfRCrZrk4NdkBDOn2anwvxTMo4nzph8JtVM+ORMWf39ITQ=="
+    with open(sender_private_key_path, 'rb') as key_file:
+        sender_private_key_pem = key_file.read()
+    with open(receiver_public_key_path, 'rb') as key_file:
+        receiver_public_key_pem = key_file.read()
 
-    # Convert base64 strings to bytes
-    private_key = base64.b64decode(private_key)
-    public_key = base64.b64decode(public_key)
-
-    print("Private Key Bytes:", private_key)
-    print("Public Key Bytes:", public_key)
-    
-    with open('temp/ciphertext.txt' , 'wb') as file: 
+    with open('temp/ciphertext.txt', 'wb') as file: 
         file.write(encrypted_aes_bytes)
     with open('temp/encryptedAESkey.txt', 'wb') as file: 
-        file.write(encryptAESkey(key, private_key, public_key))
-    
-def decryptVideo(file_name, private_key, public_key):
+        file.write(encryptAESkey(key, sender_private_key_pem, receiver_public_key_pem))
+
+def decryptVideo(file_name, receiver_private_key_path, sender_public_key_path):
     with open('temp/encryptedAESkey.txt', 'rb') as file: 
         encrypted_aes_key = file.read()
         
     with open('temp/AESiv.txt', 'rb') as file: 
-        iv = file.read()  
-    #  # Your base64 strings
-    # private_key_base64 = "MHcCAQEEIG1tm0lTR0XNgKsu33uyeP4ScxLkJ3ImTvnf3o47riZSoAoGCCqGSM49AwEHoUQDQgAES2cnfMIGauK4mqhTcc0dMXEjLAmcAy9tgJ5wXdCVwfRCrZrk4NdkBDOn2anwvxTMo4nzph8JtVM+ORMWf39ITQ=="
-    # public_key_base64 = "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAES2cnfMIGauK4mqhTcc0dMXEjLAmcAy9tgJ5wXdCVwfRCrZrk4NdkBDOn2anwvxTMo4nzph8JtVM+ORMWf39ITQ=="
+        iv = file.read()
 
-    # Convert base64 strings to bytes
-    private_key = base64.b64decode(private_key)
-    public_key = base64.b64decode(public_key)
-    key = decryptAESkey(encrypted_aes_key, private_key, public_key)
+    with open(receiver_private_key_path, 'rb') as key_file:
+        receiver_private_key_pem = key_file.read()
+    with open(sender_public_key_path, 'rb') as key_file:
+        sender_public_key_pem = key_file.read()
+    
+    key = decryptAESkey(encrypted_aes_key, receiver_private_key_pem, sender_public_key_pem)
     encrypted_aes_bytes = AES.read_file_into_bytes(file_name)
     recovered = AES.decrypt(key, iv, encrypted_aes_bytes)
-    with open('temp/recovered.mp4' , 'wb') as file: 
+    with open('temp/recovered.mp4', 'wb') as file: 
         file.write(recovered)
 
-if choice == "encrypt":
-    encryptVideo(file_name)
-elif choice == "decrypt":
-    decryptVideo(file_name)
-else: 
-    print("Not supported!!!!") 
-    exit(1)
-    
-    
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description='Enter the path of the file to encrypt or decrypt')
+    parser.add_argument('choice', help='Encrypt or Decrypt')
+    parser.add_argument('input_file', help='Path to the input MP4 file')
+    parser.add_argument('public_key', help="Path to the receiver's public key (for encryption) or sender's public key (for decryption)")
+    parser.add_argument('private_key', help="Path to the sender's private key (for encryption) or receiver's private key (for decryption)")
+    args = parser.parse_args()
 
+    file_name = args.input_file
+    choice = args.choice
+    public_key_path = args.public_key
+    private_key_path = args.private_key
+
+    if choice == "encrypt":
+        encryptVideo(file_name, private_key_path, public_key_path)
+    elif choice == "decrypt":
+        decryptVideo(file_name, private_key_path, public_key_path)
+    else:
+        print("Not supported!!!!")
+        exit(1)
