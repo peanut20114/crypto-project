@@ -61,19 +61,31 @@ namespace ProjectGUI
             return stringBuilder.ToString();
         }
 
+        private static string RemovePemHeaderFooter(string pem, bool isPrivateKey)
+        {
+            string header = isPrivateKey ? "-----BEGIN EC PRIVATE KEY-----" : "-----BEGIN PUBLIC KEY-----";
+            string footer = isPrivateKey ? "-----END EC PRIVATE KEY-----" : "-----END PUBLIC KEY-----";
+            pem = pem.Replace(header, string.Empty).Replace(footer, string.Empty);
+            pem = pem.Replace("\r", string.Empty).Replace("\n", string.Empty);
+            return pem.Trim();
+        }
+
+
+
         private async void btn_register_Click(object sender, EventArgs e) // Mark method as async
         {
             GenerateECCKeys(out string privateKeyPem, out string publicKeyPem);
+            string strippedPublicKey = RemovePemHeaderFooter(publicKeyPem, false);
+            string strippedPrivateKey = RemovePemHeaderFooter(privateKeyPem, true);
 
             var data = new User
             {
                 UserName = tb_username.Text,
                 PassWord = tb_password.Text,
                 Email = tb_Email.Text,
-                ECC_private_Key = privateKeyPem,
-                ECC_public_Key = publicKeyPem
+                ECC_private_Key = strippedPrivateKey
             };
-            string ID = GenerateRandomNumber();
+            string ID = strippedPublicKey;
             SetResponse res = await client.SetAsync("USER/" + ID, data); // Await the async method call
             User result = res.ResultAs<User>();
             MessageBox.Show("Create account successfully!");

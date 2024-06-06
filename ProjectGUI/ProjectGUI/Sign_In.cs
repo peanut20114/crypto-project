@@ -78,5 +78,10 @@ namespace ProjectGUI
                 MessageBox.Show("Incorrect username or password, please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void tb_password_TextChanged(object sender, EventArgs e)
+        {
+            tb_password.PasswordChar = '*';
+        }
     }
 }
