@@ -78,8 +78,8 @@ namespace ProjectGUI
             User result = res.ResultAs<User>();
             MessageBox.Show("Create account successfully!");
             Sign_In sign_in = new Sign_In();
-            sign_in.Show();
-            this.Close();
+            sign_in.ShowDialog();
+            this.Hide();
         }
 
         private static void GenerateECCKeys(out string privateKeyPem, out string publicKeyPem)

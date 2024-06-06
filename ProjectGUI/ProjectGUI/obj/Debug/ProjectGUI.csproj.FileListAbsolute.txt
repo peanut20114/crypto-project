@@ -164,3 +164,7 @@ D:\KY4\Crypto\project\crypto-project\ProjectGUI\ProjectGUI\bin\Debug\System.Thre
 D:\KY4\Crypto\project\crypto-project\ProjectGUI\ProjectGUI\bin\Debug\System.ValueTuple.xml
 D:\KY4\Crypto\project\crypto-project\ProjectGUI\ProjectGUI\obj\Debug\ProjectGUI.PrivateKey.resources
 D:\KY4\Crypto\project\crypto-project\ProjectGUI\ProjectGUI\obj\Debug\ProjectGUI.csproj.Up2Date
+D:\UIT\Cryptography\crypto-project\ProjectGUI\ProjectGUI\bin\Debug\Firebase.Auth.dll
+D:\UIT\Cryptography\crypto-project\ProjectGUI\ProjectGUI\bin\Debug\Firebase.Storage.dll
+D:\UIT\Cryptography\crypto-project\ProjectGUI\ProjectGUI\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\UIT\Cryptography\crypto-project\ProjectGUI\ProjectGUI\bin\Debug\System.Diagnostics.DiagnosticSource.xml
