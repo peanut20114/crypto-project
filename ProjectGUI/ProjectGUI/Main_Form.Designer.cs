@@ -48,10 +48,8 @@
             this.tb_username = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.tb_fullName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -62,7 +60,6 @@
             this.User.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,20 +67,20 @@
             // 
             this.tabControl1.Controls.Add(this.Main);
             this.tabControl1.Controls.Add(this.User);
-            this.tabControl1.Location = new System.Drawing.Point(39, 15);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabControl1.Location = new System.Drawing.Point(26, 10);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1240, 860);
+            this.tabControl1.Size = new System.Drawing.Size(938, 559);
             this.tabControl1.TabIndex = 0;
             // 
             // Main
             // 
             this.Main.Controls.Add(this.splitContainer1);
-            this.Main.Location = new System.Drawing.Point(4, 29);
-            this.Main.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Main.Location = new System.Drawing.Point(4, 22);
+            this.Main.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Main.Name = "Main";
-            this.Main.Size = new System.Drawing.Size(1232, 827);
+            this.Main.Size = new System.Drawing.Size(930, 533);
             this.Main.TabIndex = 0;
             this.Main.Text = "Main";
             this.Main.UseVisualStyleBackColor = true;
@@ -92,7 +89,7 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -108,27 +105,28 @@
             this.splitContainer1.Panel2.Controls.Add(this.btn_decrypt);
             this.splitContainer1.Panel2.Controls.Add(this.btn_selectAll);
             this.splitContainer1.Panel2.Controls.Add(this.btn_reload);
-            this.splitContainer1.Size = new System.Drawing.Size(1232, 827);
-            this.splitContainer1.SplitterDistance = 343;
+            this.splitContainer1.Size = new System.Drawing.Size(930, 533);
+            this.splitContainer1.SplitterDistance = 258;
+            this.splitContainer1.SplitterWidth = 3;
             this.splitContainer1.TabIndex = 0;
             // 
             // lv_listVideos
             // 
             this.lv_listVideos.HideSelection = false;
-            this.lv_listVideos.Location = new System.Drawing.Point(3, 2);
-            this.lv_listVideos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lv_listVideos.Location = new System.Drawing.Point(2, 1);
+            this.lv_listVideos.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.lv_listVideos.Name = "lv_listVideos";
-            this.lv_listVideos.Size = new System.Drawing.Size(402, 819);
+            this.lv_listVideos.Size = new System.Drawing.Size(269, 534);
             this.lv_listVideos.TabIndex = 0;
             this.lv_listVideos.UseCompatibleStateImageBehavior = false;
             // 
             // pb_selectedVideo
             // 
             this.pb_selectedVideo.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.pb_selectedVideo.Location = new System.Drawing.Point(3, 121);
-            this.pb_selectedVideo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pb_selectedVideo.Location = new System.Drawing.Point(2, 79);
+            this.pb_selectedVideo.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pb_selectedVideo.Name = "pb_selectedVideo";
-            this.pb_selectedVideo.Size = new System.Drawing.Size(810, 708);
+            this.pb_selectedVideo.Size = new System.Drawing.Size(658, 460);
             this.pb_selectedVideo.TabIndex = 6;
             this.pb_selectedVideo.TabStop = false;
             // 
@@ -136,10 +134,10 @@
             // 
             this.btn_download.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btn_download.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_download.Location = new System.Drawing.Point(642, 4);
+            this.btn_download.Location = new System.Drawing.Point(499, 3);
             this.btn_download.Margin = new System.Windows.Forms.Padding(0);
             this.btn_download.Name = "btn_download";
-            this.btn_download.Size = new System.Drawing.Size(174, 114);
+            this.btn_download.Size = new System.Drawing.Size(161, 74);
             this.btn_download.TabIndex = 5;
             this.btn_download.Text = "Download";
             this.btn_download.UseVisualStyleBackColor = false;
@@ -148,10 +146,10 @@
             // 
             this.btn_upload.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btn_upload.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_upload.Location = new System.Drawing.Point(448, 4);
+            this.btn_upload.Location = new System.Drawing.Point(298, 3);
             this.btn_upload.Margin = new System.Windows.Forms.Padding(0);
             this.btn_upload.Name = "btn_upload";
-            this.btn_upload.Size = new System.Drawing.Size(195, 114);
+            this.btn_upload.Size = new System.Drawing.Size(201, 74);
             this.btn_upload.TabIndex = 4;
             this.btn_upload.Text = "Upload";
             this.btn_upload.UseVisualStyleBackColor = false;
@@ -161,10 +159,10 @@
             // 
             this.btn_share.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btn_share.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_share.Location = new System.Drawing.Point(314, 78);
+            this.btn_share.Location = new System.Drawing.Point(209, 51);
             this.btn_share.Margin = new System.Windows.Forms.Padding(0);
             this.btn_share.Name = "btn_share";
-            this.btn_share.Size = new System.Drawing.Size(134, 40);
+            this.btn_share.Size = new System.Drawing.Size(89, 26);
             this.btn_share.TabIndex = 3;
             this.btn_share.Text = "Share";
             this.btn_share.UseVisualStyleBackColor = false;
@@ -173,10 +171,10 @@
             // 
             this.btn_decrypt.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btn_decrypt.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_decrypt.Location = new System.Drawing.Point(146, 78);
+            this.btn_decrypt.Location = new System.Drawing.Point(97, 51);
             this.btn_decrypt.Margin = new System.Windows.Forms.Padding(0);
             this.btn_decrypt.Name = "btn_decrypt";
-            this.btn_decrypt.Size = new System.Drawing.Size(168, 40);
+            this.btn_decrypt.Size = new System.Drawing.Size(112, 26);
             this.btn_decrypt.TabIndex = 2;
             this.btn_decrypt.Text = "Decrypt video";
             this.btn_decrypt.UseVisualStyleBackColor = false;
@@ -185,10 +183,10 @@
             // 
             this.btn_selectAll.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btn_selectAll.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_selectAll.Location = new System.Drawing.Point(3, 78);
+            this.btn_selectAll.Location = new System.Drawing.Point(2, 51);
             this.btn_selectAll.Margin = new System.Windows.Forms.Padding(0);
             this.btn_selectAll.Name = "btn_selectAll";
-            this.btn_selectAll.Size = new System.Drawing.Size(143, 40);
+            this.btn_selectAll.Size = new System.Drawing.Size(95, 26);
             this.btn_selectAll.TabIndex = 1;
             this.btn_selectAll.Text = "Select all";
             this.btn_selectAll.UseVisualStyleBackColor = false;
@@ -197,10 +195,10 @@
             // 
             this.btn_reload.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btn_reload.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_reload.Location = new System.Drawing.Point(3, 4);
+            this.btn_reload.Location = new System.Drawing.Point(2, 3);
             this.btn_reload.Margin = new System.Windows.Forms.Padding(0);
             this.btn_reload.Name = "btn_reload";
-            this.btn_reload.Size = new System.Drawing.Size(444, 74);
+            this.btn_reload.Size = new System.Drawing.Size(296, 48);
             this.btn_reload.TabIndex = 0;
             this.btn_reload.Text = "ReLoad";
             this.btn_reload.UseVisualStyleBackColor = false;
@@ -213,46 +211,47 @@
             this.User.Controls.Add(this.panel3);
             this.User.Controls.Add(this.panel2);
             this.User.Controls.Add(this.label1);
-            this.User.Controls.Add(this.panel1);
             this.User.Controls.Add(this.pictureBox1);
-            this.User.Location = new System.Drawing.Point(4, 29);
-            this.User.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.User.Location = new System.Drawing.Point(4, 22);
+            this.User.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.User.Name = "User";
-            this.User.Size = new System.Drawing.Size(1232, 827);
+            this.User.Size = new System.Drawing.Size(930, 533);
             this.User.TabIndex = 1;
             this.User.Text = "User";
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.btn_copyID);
             this.panel3.Controls.Add(this.tb_id);
             this.panel3.Controls.Add(this.label4);
-            this.panel3.Location = new System.Drawing.Point(231, 486);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel3.Location = new System.Drawing.Point(154, 289);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(526, 135);
+            this.panel3.Size = new System.Drawing.Size(351, 88);
             this.panel3.TabIndex = 4;
             // 
             // btn_copyID
             // 
             this.btn_copyID.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btn_copyID.Location = new System.Drawing.Point(376, 79);
-            this.btn_copyID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_copyID.Location = new System.Drawing.Point(251, 51);
+            this.btn_copyID.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btn_copyID.Name = "btn_copyID";
-            this.btn_copyID.Size = new System.Drawing.Size(119, 36);
+            this.btn_copyID.Size = new System.Drawing.Size(79, 23);
             this.btn_copyID.TabIndex = 2;
             this.btn_copyID.Text = "Copy ID";
             this.btn_copyID.UseVisualStyleBackColor = false;
+            this.btn_copyID.Click += new System.EventHandler(this.btn_copyID_Click);
             // 
             // tb_id
             // 
             this.tb_id.BackColor = System.Drawing.Color.DimGray;
             this.tb_id.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_id.ForeColor = System.Drawing.SystemColors.Info;
-            this.tb_id.Location = new System.Drawing.Point(142, 12);
-            this.tb_id.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tb_id.Location = new System.Drawing.Point(95, 8);
+            this.tb_id.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tb_id.Name = "tb_id";
-            this.tb_id.Size = new System.Drawing.Size(353, 44);
+            this.tb_id.Size = new System.Drawing.Size(237, 32);
             this.tb_id.TabIndex = 1;
             // 
             // label4
@@ -260,9 +259,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Info;
-            this.label4.Location = new System.Drawing.Point(84, 12);
+            this.label4.Location = new System.Drawing.Point(56, 8);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 25);
+            this.label4.Size = new System.Drawing.Size(33, 17);
             this.label4.TabIndex = 0;
             this.label4.Text = "ID :";
             // 
@@ -270,10 +270,10 @@
             // 
             this.panel2.Controls.Add(this.tb_username);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(231, 380);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel2.Location = new System.Drawing.Point(154, 220);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(526, 99);
+            this.panel2.Size = new System.Drawing.Size(351, 64);
             this.panel2.TabIndex = 3;
             // 
             // tb_username
@@ -281,10 +281,10 @@
             this.tb_username.BackColor = System.Drawing.Color.DimGray;
             this.tb_username.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_username.ForeColor = System.Drawing.SystemColors.Info;
-            this.tb_username.Location = new System.Drawing.Point(142, 12);
-            this.tb_username.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tb_username.Location = new System.Drawing.Point(95, 8);
+            this.tb_username.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tb_username.Name = "tb_username";
-            this.tb_username.Size = new System.Drawing.Size(353, 44);
+            this.tb_username.Size = new System.Drawing.Size(237, 32);
             this.tb_username.TabIndex = 1;
             // 
             // label3
@@ -292,9 +292,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Info;
-            this.label3.Location = new System.Drawing.Point(19, 12);
+            this.label3.Location = new System.Drawing.Point(13, 8);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(132, 25);
+            this.label3.Size = new System.Drawing.Size(91, 17);
             this.label3.TabIndex = 0;
             this.label3.Text = "Username :";
             // 
@@ -303,65 +304,45 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label1.Location = new System.Drawing.Point(405, 125);
+            this.label1.Location = new System.Drawing.Point(270, 81);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(536, 64);
+            this.label1.Size = new System.Drawing.Size(357, 42);
             this.label1.TabIndex = 2;
             this.label1.Text = "USER INFORMATION";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.tb_fullName);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(231, 274);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(526, 99);
-            this.panel1.TabIndex = 1;
-            // 
-            // tb_fullName
-            // 
-            this.tb_fullName.BackColor = System.Drawing.Color.DimGray;
-            this.tb_fullName.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_fullName.ForeColor = System.Drawing.SystemColors.Info;
-            this.tb_fullName.Location = new System.Drawing.Point(142, 12);
-            this.tb_fullName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tb_fullName.Name = "tb_fullName";
-            this.tb_fullName.Size = new System.Drawing.Size(353, 44);
-            this.tb_fullName.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Info;
-            this.label2.Location = new System.Drawing.Point(19, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(129, 25);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Full name :";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ProjectGUI.Properties.Resources.Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(822, 274);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(548, 178);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(286, 348);
+            this.pictureBox1.Size = new System.Drawing.Size(191, 226);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label2.Location = new System.Drawing.Point(195, 56);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Copied";
+            this.label2.Visible = false;
+            // 
             // Main_Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProjectGUI.Properties.Resources.BackGround_ngang;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1312, 905);
+            this.ClientSize = new System.Drawing.Size(1000, 588);
             this.Controls.Add(this.tabControl1);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "Main_Form";
             this.Text = "Main_Form";
             this.tabControl1.ResumeLayout(false);
@@ -377,8 +358,6 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -403,12 +382,10 @@
         private System.Windows.Forms.TextBox tb_username;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox tb_fullName;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btn_copyID;
         private System.Windows.Forms.TextBox tb_id;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -18,13 +18,21 @@ namespace ProjectGUI
         private static string firebaseStorageBucket = "gs://crypto-project-2e5b1.appspot.com";
         private static string firebaseDatabaseUrl = "https://crypto-project-2e5b1.firebaseio.com/";
 
-        public Main_Form()
+        public Main_Form(string username, string id)
         {
             InitializeComponent();
+            tb_username.Text = username;
+            tb_id.Text = id;
         }
 
         private void btn_upload_Click(object sender, EventArgs e)
         {
+        }
+
+        private void btn_copyID_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(tb_id.Text);
+            label2.Visible = true;
         }
     }
 }

@@ -15,7 +15,8 @@ namespace ProjectGUI
 {
     public partial class Sign_In : Form
     {
-
+        public string curUser_name;
+        public string curUser_ID;
         IFirebaseConfig config = new FirebaseConfig
         {
             AuthSecret = "GdfCwWCBpxKuxjX1yZfEr3Tplc1VdaS1YsTIuLLR",
@@ -65,13 +66,15 @@ namespace ProjectGUI
                 {
                     loginFlag = true;
                     Program.UserID = userID;
+                    curUser_ID = userData.ID;
+                    curUser_name = userData.UserName;
                     break;
                 }
             }
             if (loginFlag)
             {
-                Main_Form main_Form = new Main_Form();
-                main_Form.Show();
+                Main_Form main_Form = new Main_Form(curUser_name, curUser_ID);
+                main_Form.ShowDialog();
                 this.Hide();
             }
             else
