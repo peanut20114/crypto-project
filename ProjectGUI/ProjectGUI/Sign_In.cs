@@ -33,6 +33,7 @@ namespace ProjectGUI
         {
             Sign_Up sign_Up = new Sign_Up();
             sign_Up.ShowDialog();
+            this.Close();
         }
 
         private void tb_username_Click(object sender, EventArgs e)

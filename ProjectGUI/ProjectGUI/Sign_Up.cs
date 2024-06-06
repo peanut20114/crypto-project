@@ -8,8 +8,11 @@ using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Crypto.Generators;
 using Org.BouncyCastle.Security;
 using Org.BouncyCastle.OpenSsl;
+using Org.BouncyCastle.Math.EC;
+using Org.BouncyCastle.Utilities.Encoders;
 using System.IO;
-using System.Threading.Tasks; // Add this namespace for Task
+using System.Threading.Tasks;
+using Org.BouncyCastle.Crypto.Parameters;
 
 namespace ProjectGUI
 {
@@ -22,6 +25,7 @@ namespace ProjectGUI
         };
 
         IFirebaseClient client;
+
         public Sign_Up()
         {
             client = new FireSharp.FirebaseClient(config);
@@ -61,32 +65,19 @@ namespace ProjectGUI
             return stringBuilder.ToString();
         }
 
-        private static string RemovePemHeaderFooter(string pem, bool isPrivateKey)
+        private async void btn_register_Click(object sender, EventArgs e)
         {
-            string header = isPrivateKey ? "-----BEGIN EC PRIVATE KEY-----" : "-----BEGIN PUBLIC KEY-----";
-            string footer = isPrivateKey ? "-----END EC PRIVATE KEY-----" : "-----END PUBLIC KEY-----";
-            pem = pem.Replace(header, string.Empty).Replace(footer, string.Empty);
-            pem = pem.Replace("\r", string.Empty).Replace("\n", string.Empty);
-            return pem.Trim();
-        }
-
-
-
-        private async void btn_register_Click(object sender, EventArgs e) // Mark method as async
-        {
-            GenerateECCKeys(out string privateKeyPem, out string publicKeyPem);
-            string strippedPublicKey = RemovePemHeaderFooter(publicKeyPem, false);
-            string strippedPrivateKey = RemovePemHeaderFooter(privateKeyPem, true);
+            GenerateECCKeys(out string privateKeyHex, out string publicKeyHex);
 
             var data = new User
             {
                 UserName = tb_username.Text,
                 PassWord = tb_password.Text,
                 Email = tb_Email.Text,
-                ECC_private_Key = strippedPrivateKey
+                ECC_private_Key = privateKeyHex,
+                ID = publicKeyHex
             };
-            data.ID = strippedPublicKey;
-            SetResponse res = await client.SetAsync("USER/" + data.ID, data); // Await the async method call
+            SetResponse res = await client.SetAsync("USER/" + data.ID, data);
             User result = res.ResultAs<User>();
             MessageBox.Show("Create account successfully!");
             Sign_In sign_in = new Sign_In();
@@ -94,7 +85,7 @@ namespace ProjectGUI
             this.Close();
         }
 
-        private static void GenerateECCKeys(out string privateKeyPem, out string publicKeyPem)
+        private static void GenerateECCKeys(out string privateKeyHex, out string publicKeyHex)
         {
             var keyGen = new ECKeyPairGenerator();
             var secureRandom = new SecureRandom();
@@ -105,18 +96,21 @@ namespace ProjectGUI
             AsymmetricKeyParameter privateKey = keyPair.Private;
             AsymmetricKeyParameter publicKey = keyPair.Public;
 
-            privateKeyPem = ConvertKeyToPem(privateKey);
-            publicKeyPem = ConvertKeyToPem(publicKey);
+            privateKeyHex = ConvertKeyToHex(privateKey, true);
+            publicKeyHex = ConvertKeyToHex(publicKey, false);
         }
 
-        private static string ConvertKeyToPem(AsymmetricKeyParameter key)
+        private static string ConvertKeyToHex(AsymmetricKeyParameter key, bool isPrivateKey)
         {
-            using (StringWriter stringWriter = new StringWriter())
+            if (isPrivateKey)
             {
-                PemWriter pemWriter = new PemWriter(stringWriter);
-                pemWriter.WriteObject(key);
-                pemWriter.Writer.Flush();
-                return stringWriter.ToString();
+                var privKey = (ECPrivateKeyParameters)key;
+                return privKey.D.ToString(16);
+            }
+            else
+            {
+                var pubKey = (ECPublicKeyParameters)key;
+                return Hex.ToHexString(pubKey.Q.GetEncoded());
             }
         }
     }

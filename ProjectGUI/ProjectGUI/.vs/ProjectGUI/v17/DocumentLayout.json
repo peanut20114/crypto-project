@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\sign_up.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|d:\\uit\\cryptography\\crypto-project\\projectgui\\projectgui\\sign_up.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:sign_up.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -15,12 +15,12 @@
       "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:sign_in.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\main_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:main_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|d:\\uit\\cryptography\\crypto-project\\projectgui\\projectgui\\main_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:main_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\main_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -90,26 +90,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Main_Form.cs",
               "DocumentMoniker": "D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\Main_Form.cs",
               "RelativeDocumentMoniker": "Main_Form.cs",
               "ToolTip": "D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\Main_Form.cs",
               "RelativeToolTip": "Main_Form.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAhAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-05T10:23:44.059Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-04T14:31:25.669Z",
               "EditorCaption": ""
@@ -123,7 +123,8 @@
               "ToolTip": "D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\PrivateKey.cs [Design]",
               "RelativeToolTip": "PrivateKey.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T11:16:50.652Z"
+              "WhenOpened": "2024-06-04T11:16:50.652Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -135,7 +136,8 @@
               "RelativeToolTip": "User_ID.Designer.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T11:13:51.257Z"
+              "WhenOpened": "2024-06-04T11:13:51.257Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -147,7 +149,8 @@
               "RelativeToolTip": "User_ID.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T11:12:35.724Z"
+              "WhenOpened": "2024-06-04T11:12:35.724Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -157,7 +160,7 @@
               "RelativeDocumentMoniker": "Sign_Up.cs",
               "ToolTip": "D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\Sign_Up.cs",
               "RelativeToolTip": "Sign_Up.cs",
-              "ViewState": "AQIAADAAAAAAAAAAAAAowFAAAAAfAAAA",
+              "ViewState": "AQIAAEMAAAAAAAAAAAA5wGsAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-04T11:09:21.453Z",
               "EditorCaption": ""
@@ -170,7 +173,7 @@
               "RelativeDocumentMoniker": "Sign_In.cs",
               "ToolTip": "D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\Sign_In.cs",
               "RelativeToolTip": "Sign_In.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAnwBwAAAATAAAA",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAnwCMAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-04T11:08:13.762Z",
               "EditorCaption": ""
@@ -184,7 +187,8 @@
               "ToolTip": "D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\User_ID.cs [Design]",
               "RelativeToolTip": "User_ID.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T11:01:18.261Z"
+              "WhenOpened": "2024-06-04T11:01:18.261Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
