@@ -8,11 +8,8 @@ using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Crypto.Generators;
 using Org.BouncyCastle.Security;
 using Org.BouncyCastle.OpenSsl;
-using Org.BouncyCastle.Math.EC;
-using Org.BouncyCastle.Utilities.Encoders;
 using System.IO;
-using System.Threading.Tasks;
-using Org.BouncyCastle.Crypto.Parameters;
+using System.Threading.Tasks; // Add this namespace for Task
 
 namespace ProjectGUI
 {
@@ -25,7 +22,6 @@ namespace ProjectGUI
         };
 
         IFirebaseClient client;
-
         public Sign_Up()
         {
             client = new FireSharp.FirebaseClient(config);
@@ -65,19 +61,20 @@ namespace ProjectGUI
             return stringBuilder.ToString();
         }
 
-        private async void btn_register_Click(object sender, EventArgs e)
+        private async void btn_register_Click(object sender, EventArgs e) // Mark method as async
         {
-            GenerateECCKeys(out string privateKeyHex, out string publicKeyHex);
+            GenerateECCKeys(out string privateKeyPem, out string publicKeyPem);
 
             var data = new User
             {
                 UserName = tb_username.Text,
                 PassWord = tb_password.Text,
                 Email = tb_Email.Text,
-                ECC_private_Key = privateKeyHex,
-                ID = publicKeyHex
+                ECC_private_Key = privateKeyPem,
+                ECC_public_Key = publicKeyPem
             };
-            SetResponse res = await client.SetAsync("USER/" + data.ID, data);
+            data.ID = GenerateRandomNumber();
+            SetResponse res = await client.SetAsync("USER/" + data.ID, data); // Await the async method call
             User result = res.ResultAs<User>();
             MessageBox.Show("Create account successfully!");
             Sign_In sign_in = new Sign_In();
@@ -85,7 +82,7 @@ namespace ProjectGUI
             this.Close();
         }
 
-        private static void GenerateECCKeys(out string privateKeyHex, out string publicKeyHex)
+        private static void GenerateECCKeys(out string privateKeyPem, out string publicKeyPem)
         {
             var keyGen = new ECKeyPairGenerator();
             var secureRandom = new SecureRandom();
@@ -96,21 +93,18 @@ namespace ProjectGUI
             AsymmetricKeyParameter privateKey = keyPair.Private;
             AsymmetricKeyParameter publicKey = keyPair.Public;
 
-            privateKeyHex = ConvertKeyToHex(privateKey, true);
-            publicKeyHex = ConvertKeyToHex(publicKey, false);
+            privateKeyPem = ConvertKeyToPem(privateKey);
+            publicKeyPem = ConvertKeyToPem(publicKey);
         }
 
-        private static string ConvertKeyToHex(AsymmetricKeyParameter key, bool isPrivateKey)
+        private static string ConvertKeyToPem(AsymmetricKeyParameter key)
         {
-            if (isPrivateKey)
+            using (StringWriter stringWriter = new StringWriter())
             {
-                var privKey = (ECPrivateKeyParameters)key;
-                return privKey.D.ToString(16);
-            }
-            else
-            {
-                var pubKey = (ECPublicKeyParameters)key;
-                return Hex.ToHexString(pubKey.Q.GetEncoded());
+                PemWriter pemWriter = new PemWriter(stringWriter);
+                pemWriter.WriteObject(key);
+                pemWriter.Writer.Flush();
+                return stringWriter.ToString();
             }
         }
     }

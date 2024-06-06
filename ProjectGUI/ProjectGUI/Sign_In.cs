@@ -72,7 +72,7 @@ namespace ProjectGUI
             {
                 Main_Form main_Form = new Main_Form();
                 main_Form.Show();
-                this.Close();
+                this.Hide();
             }
             else
             {
