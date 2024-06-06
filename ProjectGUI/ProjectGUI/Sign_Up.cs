@@ -85,8 +85,8 @@ namespace ProjectGUI
                 Email = tb_Email.Text,
                 ECC_private_Key = strippedPrivateKey
             };
-            string ID = strippedPublicKey;
-            SetResponse res = await client.SetAsync("USER/" + ID, data); // Await the async method call
+            data.ID = strippedPublicKey;
+            SetResponse res = await client.SetAsync("USER/" + data.ID, data); // Await the async method call
             User result = res.ResultAs<User>();
             MessageBox.Show("Create account successfully!");
             Sign_In sign_in = new Sign_In();

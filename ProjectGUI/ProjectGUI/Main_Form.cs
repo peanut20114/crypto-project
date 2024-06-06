@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using Firebase.Database;
-using Firebase.Storage;
 using Firebase.Database.Query;
 using System.Collections.Generic;
 
@@ -27,18 +26,6 @@ namespace ProjectGUI
 
         private void btn_upload_Click(object sender, EventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Video Files(*.mp4;*.avi;*.mov)|*.mp4;*.avi;*.mov";
-
-            if (ofd.ShowDialog() == DialogResult.OK)
-            {
-                string videoPath = ofd.FileName;
-                string videoName = Path.GetFileName(videoPath);
-
-                var stream = File.Open(videoPath, FileMode.Open);
-                var task = new FirebaseStorage(firebaseStorageBucket)
-                    .Child
-            }
         }
     }
 }
