@@ -77,9 +77,10 @@ namespace ProjectGUI
             SetResponse res = await client.SetAsync("USER/" + data.ID, data); // Await the async method call
             User result = res.ResultAs<User>();
             MessageBox.Show("Create account successfully!");
-            Sign_In sign_in = new Sign_In();
-            sign_in.ShowDialog();
             this.Hide();
+            Sign_In sign_in = new Sign_In();
+            sign_in.Show();
+            
         }
 
         private static void GenerateECCKeys(out string privateKeyPem, out string publicKeyPem)

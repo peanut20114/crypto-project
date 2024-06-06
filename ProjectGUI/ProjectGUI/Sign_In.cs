@@ -32,9 +32,10 @@ namespace ProjectGUI
 
         private void lb_SignUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            this.Hide();
             Sign_Up sign_Up = new Sign_Up();
-            sign_Up.ShowDialog();
-            this.Close();
+            sign_Up.Show();
+            
         }
 
         private void tb_username_Click(object sender, EventArgs e)
@@ -73,9 +74,10 @@ namespace ProjectGUI
             }
             if (loginFlag)
             {
-                Main_Form main_Form = new Main_Form(curUser_name, curUser_ID);
-                main_Form.ShowDialog();
                 this.Hide();
+                Main_Form main_Form = new Main_Form(curUser_name, curUser_ID);
+                main_Form.Show();
+                
             }
             else
             {
