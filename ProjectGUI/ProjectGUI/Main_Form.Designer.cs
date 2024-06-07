@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_Form));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Main = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.lv_listVideos = new System.Windows.Forms.ListView();
-            this.pb_selectedVideo = new System.Windows.Forms.PictureBox();
             this.btn_download = new System.Windows.Forms.Button();
             this.btn_upload = new System.Windows.Forms.Button();
             this.btn_share = new System.Windows.Forms.Button();
@@ -41,6 +41,7 @@
             this.btn_reload = new System.Windows.Forms.Button();
             this.User = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.btn_copyID = new System.Windows.Forms.Button();
             this.tb_id = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -49,18 +50,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.tabControl1.SuspendLayout();
             this.Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_selectedVideo)).BeginInit();
             this.User.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -98,7 +99,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.pb_selectedVideo);
+            this.splitContainer1.Panel2.Controls.Add(this.axWindowsMediaPlayer1);
             this.splitContainer1.Panel2.Controls.Add(this.btn_download);
             this.splitContainer1.Panel2.Controls.Add(this.btn_upload);
             this.splitContainer1.Panel2.Controls.Add(this.btn_share);
@@ -119,16 +120,6 @@
             this.lv_listVideos.Size = new System.Drawing.Size(269, 534);
             this.lv_listVideos.TabIndex = 0;
             this.lv_listVideos.UseCompatibleStateImageBehavior = false;
-            // 
-            // pb_selectedVideo
-            // 
-            this.pb_selectedVideo.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.pb_selectedVideo.Location = new System.Drawing.Point(2, 79);
-            this.pb_selectedVideo.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.pb_selectedVideo.Name = "pb_selectedVideo";
-            this.pb_selectedVideo.Size = new System.Drawing.Size(658, 460);
-            this.pb_selectedVideo.TabIndex = 6;
-            this.pb_selectedVideo.TabStop = false;
             // 
             // btn_download
             // 
@@ -231,6 +222,17 @@
             this.panel3.Size = new System.Drawing.Size(351, 88);
             this.panel3.TabIndex = 4;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label2.Location = new System.Drawing.Point(195, 56);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Copied";
+            this.label2.Visible = false;
+            // 
             // btn_copyID
             // 
             this.btn_copyID.BackColor = System.Drawing.SystemColors.ButtonShadow;
@@ -322,16 +324,14 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // label2
+            // axWindowsMediaPlayer1
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(195, 56);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Copied";
-            this.label2.Visible = false;
+            this.axWindowsMediaPlayer1.Enabled = true;
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(3, 80);
+            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(657, 450);
+            this.axWindowsMediaPlayer1.TabIndex = 6;
             // 
             // Main_Form
             // 
@@ -339,7 +339,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProjectGUI.Properties.Resources.BackGround_ngang;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1000, 588);
+            this.ClientSize = new System.Drawing.Size(986, 588);
             this.Controls.Add(this.tabControl1);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -351,7 +351,6 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pb_selectedVideo)).EndInit();
             this.User.ResumeLayout(false);
             this.User.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -359,6 +358,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -376,7 +376,6 @@
         private System.Windows.Forms.Button btn_share;
         private System.Windows.Forms.Button btn_decrypt;
         private System.Windows.Forms.Button btn_selectAll;
-        private System.Windows.Forms.PictureBox pb_selectedVideo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox tb_username;
@@ -387,5 +386,6 @@
         private System.Windows.Forms.TextBox tb_id;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
+        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
     }
 }
