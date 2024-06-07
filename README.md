@@ -21,8 +21,8 @@ Enter the path of the file to encrypt or decrypt, path to public key, path to pr
 positional arguments:
   choice       Encrypt or Decrypt
   input_file   Path to the input MP4 file
-  public_key   Path to the receiver's public key (for encryption) or sender's public key (for decryption)
-  private_key  Path to the sender's private key (for encryption) or receiver's private key (for decryption)
+  public_key   Path to the receiver`s public key (for encryption) or sender`s public key (for decryption)
+  private_key  Path to the sender`s private key (for encryption) or receiver`s private key (for decryption)
 ```
 #### Encryption
 ```python 
