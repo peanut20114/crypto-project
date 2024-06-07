@@ -14,15 +14,16 @@ python split.py input-video.mp4 ouput chunk-duration
 ### Script to run AES.py 
 ### Usage
 ```python 
-usage: python AES.py [-h] choice input_file public_key private_key
+python AES.py 
+usage: AES.py [-h] choice input_file public_key private_key
 
 Enter the path of the file to encrypt or decrypt, path to public key, path to private key
 
 positional arguments:
   choice       Encrypt or Decrypt
   input_file   Path to the input MP4 file
-  public_key   Path to the receiver`s public key (for encryption) or sender`s public key (for decryption)
-  private_key  Path to the sender`s private key (for encryption) or receiver`s private key (for decryption)
+  public_key   Path to the receiver public key (for encryption) or sender public key (for decryption)
+  private_key  Path to the sender private key (for encryption) or receiver private key (for decryption)
 ```
 #### Encryption
 ```python 
