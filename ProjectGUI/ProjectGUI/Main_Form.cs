@@ -52,13 +52,11 @@ namespace ProjectGUI
                                 AuthTokenAsyncFactory = () => Task.FromResult(a.FirebaseToken),
                                 ThrowOnCancel = true,
                             })
-                            .Child(tb_id.Text)
-                            .Child(videoName)
+                            .Child(tb_id.Text) // Tạo thư mục có tên là ID của người đăng
+                            .Child(videoName) // Tên của video
                             .PutAsync(stream, cancellation.Token);
 
                         string downloadUrl = await task;
-
-                        await SaveVideoUrlToDatabase(downloadUrl);
 
                         MessageBox.Show("Video uploaded successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -66,17 +64,25 @@ namespace ProjectGUI
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred: {ex.Message}");
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private async Task SaveVideoUrlToDatabase(string downloadUrl)
         {
-            var firebaseClient = new FirebaseClient(firebaseDatabaseUrl);
-            await firebaseClient
-                .Child(tb_id.Text)
-                .PostAsync(new { url = downloadUrl });
+            try
+            {
+                var firebaseClient = new FirebaseClient(firebaseDatabaseUrl);
+                await firebaseClient
+                    .Child(tb_id.Text)
+                    .PostAsync(new { url = downloadUrl });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error saving video URL to database: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
         private void btn_copyID_Click(object sender, EventArgs e)
         {

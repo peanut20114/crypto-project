@@ -35,7 +35,6 @@ namespace ProjectGUI
             this.Hide();
             Sign_Up sign_Up = new Sign_Up();
             sign_Up.Show();
-            
         }
 
         private void tb_username_Click(object sender, EventArgs e)
