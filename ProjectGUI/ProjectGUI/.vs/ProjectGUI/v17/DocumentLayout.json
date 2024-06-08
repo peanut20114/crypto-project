@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\main_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|d:\\uit\\hk4_2023-2024\\matmahoc\\finalprojects\\crypto-project\\projectgui\\projectgui\\main_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:main_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -11,7 +11,7 @@
       "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:crypto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|d:\\uit\\hk4_2023-2024\\matmahoc\\finalprojects\\crypto-project\\projectgui\\projectgui\\privatekey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\privatekey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:privatekey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -86,8 +86,7 @@
               "RelativeToolTip": "Crypto.cs",
               "ViewState": "AQIAABkAAAAAAAAAAAAQwBIAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-08T11:31:33.208Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-08T11:31:33.208Z"
             },
             {
               "$type": "Document",
@@ -109,7 +108,7 @@
               "RelativeDocumentMoniker": "Main_Form.cs",
               "ToolTip": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\Main_Form.cs",
               "RelativeToolTip": "Main_Form.cs",
-              "ViewState": "AQIAACwAAAAAAAAAAAAQwD4AAAAGAAAA",
+              "ViewState": "AQIAACwAAAAAAAAAAAAQwD0AAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-05T10:23:44.059Z",
               "EditorCaption": ""
@@ -124,8 +123,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAAAwwCIAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T14:31:25.669Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T14:31:25.669Z"
             },
             {
               "$type": "Document",
@@ -136,8 +134,7 @@
               "ToolTip": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\PrivateKey.cs [Design]",
               "RelativeToolTip": "PrivateKey.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T11:16:50.652Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-06-04T11:16:50.652Z"
             },
             {
               "$type": "Document",
@@ -173,8 +170,7 @@
               "RelativeToolTip": "Sign_Up.cs",
               "ViewState": "AQIAACkAAAAAAAAAAAAIwEUAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T11:09:21.453Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T11:09:21.453Z"
             },
             {
               "$type": "Document",
@@ -207,8 +203,7 @@
               "ToolTip": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\Sign_Up.cs [Design]",
               "RelativeToolTip": "Sign_Up.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T07:41:09.374Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-06-04T07:41:09.374Z"
             },
             {
               "$type": "Document",
