@@ -225,5 +225,10 @@ namespace ProjectGUI
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btn_share_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

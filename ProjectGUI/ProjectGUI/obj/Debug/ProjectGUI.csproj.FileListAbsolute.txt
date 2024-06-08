@@ -531,3 +531,8 @@ D:\UIT\HK4_2023-2024\MatMaHoc\FinalProjects\crypto-project\ProjectGUI\ProjectGUI
 D:\UIT\HK4_2023-2024\MatMaHoc\FinalProjects\crypto-project\ProjectGUI\ProjectGUI\obj\Debug\ProjectGUI.csproj.Up2Date
 D:\UIT\HK4_2023-2024\MatMaHoc\FinalProjects\crypto-project\ProjectGUI\ProjectGUI\obj\Debug\ProjectGUI.exe
 D:\UIT\HK4_2023-2024\MatMaHoc\FinalProjects\crypto-project\ProjectGUI\ProjectGUI\obj\Debug\ProjectGUI.pdb
+D:\UIT\Cryptography\crypto-project\ProjectGUI\ProjectGUI\bin\Debug\Interop.WMPLib.dll
+D:\UIT\Cryptography\crypto-project\ProjectGUI\ProjectGUI\bin\Debug\AxInterop.WMPLib.dll
+D:\UIT\Cryptography\crypto-project\ProjectGUI\ProjectGUI\obj\Debug\Interop.WMPLib.dll
+D:\UIT\Cryptography\crypto-project\ProjectGUI\ProjectGUI\obj\Debug\AxInterop.WMPLib.dll
+D:\UIT\Cryptography\crypto-project\ProjectGUI\ProjectGUI\obj\Debug\ProjectGUI.csproj.ResolveComReference.cache

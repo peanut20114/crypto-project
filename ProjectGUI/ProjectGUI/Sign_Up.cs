@@ -64,19 +64,20 @@ namespace ProjectGUI
         private async void btn_register_Click(object sender, EventArgs e) // Mark method as async
         {
             GenerateECCKeys(out string privateKeyPem, out string publicKeyPem);
-
+            string strippedPublicKey = RemovePemHeaderFooter(publicKeyPem);
             var data = new User
             {
                 UserName = tb_username.Text,
                 PassWord = tb_password.Text,
                 Email = tb_Email.Text,
-                ECC_private_Key = privateKeyPem,
-                ECC_public_Key = publicKeyPem
+                ECC_public_Key = strippedPublicKey
             };
             data.ID = GenerateRandomNumber();
             SetResponse res = await client.SetAsync("USER/" + data.ID, data); // Await the async method call
             User result = res.ResultAs<User>();
             MessageBox.Show("Create account successfully!");
+            SaveKeysToFile(data.UserName, privateKeyPem, publicKeyPem);
+
             this.Hide();
             Sign_In sign_in = new Sign_In();
             sign_in.Show();
@@ -108,5 +109,32 @@ namespace ProjectGUI
                 return stringWriter.ToString();
             }
         }
+
+        private static string RemovePemHeaderFooter(string pem)
+        {
+            string header = "-----BEGIN PUBLIC KEY-----";
+            string footer = "-----END PUBLIC KEY-----";
+            pem = pem.Replace(header, string.Empty).Replace(footer, string.Empty);
+            pem = pem.Replace("\r", string.Empty).Replace("\n", string.Empty);
+            return pem.Trim();
+        }
+
+        private static void SaveKeysToFile(string userName, string privateKey, string publicKey)
+        {
+            string directoryPath = Path.Combine("D:\\", $"{userName}_Key");
+
+            // Create the directory if it doesn't exist
+            if (!Directory.Exists(directoryPath))
+            {
+                Directory.CreateDirectory(directoryPath);
+            }
+
+            string privateKeyPath = Path.Combine(directoryPath, $"{userName}_private_key.pem");
+            string publicKeyPath = Path.Combine(directoryPath, $"{userName}_public_key.pem");
+
+            File.WriteAllText(privateKeyPath, privateKey);
+            File.WriteAllText(publicKeyPath, publicKey);
+        }
+
     }
 }
