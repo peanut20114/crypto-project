@@ -228,7 +228,11 @@ namespace ProjectGUI
 
         private void btn_share_Click(object sender, EventArgs e)
         {
-
+            var selectedItem = lv_listVideos.SelectedItems[0];
+            string videoName = selectedItem.SubItems[0].Text;
+            string videoUrl = selectedItem.SubItems[1].Text;
+            User_ID user_ID = new User_ID(videoName, videoUrl);
+            user_ID.Show();
         }
     }
 }
