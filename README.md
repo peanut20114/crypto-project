@@ -14,23 +14,39 @@ python split.py input-video.mp4 ouput chunk-duration
 ### Script to run AES.py 
 ### Usage
 ```python 
-python AES.py 
-usage: AES.py [-h] choice input_file public_key private_key
+ usage: python AES.py [-h] [--public_key PUBLIC_KEY] [--private_key PRIVATE_KEY] [--key_path KEY_PATH] [--iv_path IV_PATH] choice input_file
 
-Enter the path of the file to encrypt or decrypt, path to public key, path to private key
+Enter the path of the file to encrypt or decrypt
 
 positional arguments:
-  choice       Encrypt or Decrypt
-  input_file   Path to the input MP4 file
-  public_key   Path to the receiver public key (for encryption) or sender public key (for decryption)
-  private_key  Path to the sender private key (for encryption) or receiver private key (for decryption)
+  choice                [Video|Key Encryption or Decryption]
+  input_file            Path to the input MP4 file
+
+options:
+  -h, --help            show this help message and exit
+  --public_key PUBLIC_KEY
+                        Path to the receiver's public key (for encryption) or sender's public key (for decryption)
+  --private_key PRIVATE_KEY
+                        Path to the sender's private key (for encryption) or receiver's private key (for decryption)
+  --key_path KEY_PATH
+  --iv_path IV_PATH
 ```
-#### Encryption
+#### Video Encryption
 ```python 
-python AES.py encrypt input.mp4 ./temp/receiver_public_key.pem ./temp/sender_private_key.pem
+python AES.py encrypt input.mp4 
 ```
 
-#### Decryption
+#### Video Decryption
 ```python
-python AES.py decrypt ./temp/ciphertext.txt ./temp/sender_public_key.pem ./temp/receiver_private_key.pem
+python test.py decrypt ./temp/ciphertext.txt --key_path ./temp/AESkey.txt --iv_path ./temp/AESiv.txt
+```
+
+#### Key Encryption 
+```python
+python test.py encryptAESkey ./temp/AESkey.txt --public_key ./temp/receiver_public_key.pem --private_key ./temp/sender_private_key.pem
+```
+
+#### Key Decryption 
+```python 
+python test.py decryptAESkey ./temp/AESkey.txt --public_key ./temp/sender_public_key.pem --private_key ./temp/receiver_private_key.pem
 ```
