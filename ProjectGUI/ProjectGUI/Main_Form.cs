@@ -6,6 +6,7 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WMPLib;
 
 namespace ProjectGUI
 {
@@ -59,6 +60,8 @@ namespace ProjectGUI
                         string downloadUrl = await task;
 
                         MessageBox.Show("Video uploaded successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        lv_listVideos.Items.Add(downloadUrl);
+                        
                     }
                 }
             }
@@ -88,6 +91,55 @@ namespace ProjectGUI
         {
             Clipboard.SetText(tb_id.Text);
             label2.Visible = true;
+        }
+
+        private void lv_listVideos_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            ListViewItem selectedItem = lv_listVideos.SelectedItems[0];
+            string url = selectedItem.Text;
+            axWindowsMediaPlayer1.URL = url;
+            axWindowsMediaPlayer1.Ctlcontrols.play();
+        }
+
+        private async void btn_download_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Kiểm tra xem có mục nào được chọn không
+                if (lv_listVideos.SelectedItems.Count == 0)
+                {
+                    MessageBox.Show("Please select a file to download.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                // Lấy URL của video từ mục đã chọn trong ListView
+                string url = lv_listVideos.SelectedItems[0].Text; // Giả sử URL được lưu tại cột thứ hai trong ListView
+
+                // Hiển thị hộp thoại chọn thư mục để lưu tập tin đã tải xuống
+                FolderBrowserDialog folderDialog = new FolderBrowserDialog();
+                if (folderDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string destinationFolder = folderDialog.SelectedPath;
+
+                    // Lấy tên tệp từ URL
+                    string fileName = Path.GetFileName(new Uri(url).LocalPath);
+
+                    // Tạo đường dẫn đầy đủ của tệp
+                    string filePath = Path.Combine(destinationFolder, fileName);
+
+                    // Thực hiện tải xuống và lưu vào thư mục đích
+                    using (var client = new System.Net.WebClient())
+                    {
+                        await client.DownloadFileTaskAsync(url, filePath);
+                    }
+
+                    MessageBox.Show("File downloaded successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -33,6 +33,7 @@
             this.Main = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.lv_listVideos = new System.Windows.Forms.ListView();
+            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.btn_download = new System.Windows.Forms.Button();
             this.btn_upload = new System.Windows.Forms.Button();
             this.btn_share = new System.Windows.Forms.Button();
@@ -50,18 +51,17 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.tabControl1.SuspendLayout();
             this.Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.User.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -120,6 +120,17 @@
             this.lv_listVideos.Size = new System.Drawing.Size(269, 534);
             this.lv_listVideos.TabIndex = 0;
             this.lv_listVideos.UseCompatibleStateImageBehavior = false;
+            this.lv_listVideos.View = System.Windows.Forms.View.Tile;
+            this.lv_listVideos.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lv_listVideos_MouseDoubleClick);
+            // 
+            // axWindowsMediaPlayer1
+            // 
+            this.axWindowsMediaPlayer1.Enabled = true;
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(3, 80);
+            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(657, 450);
+            this.axWindowsMediaPlayer1.TabIndex = 6;
             // 
             // btn_download
             // 
@@ -132,6 +143,7 @@
             this.btn_download.TabIndex = 5;
             this.btn_download.Text = "Download";
             this.btn_download.UseVisualStyleBackColor = false;
+            this.btn_download.Click += new System.EventHandler(this.btn_download_Click);
             // 
             // btn_upload
             // 
@@ -324,15 +336,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // axWindowsMediaPlayer1
-            // 
-            this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(3, 80);
-            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
-            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(657, 450);
-            this.axWindowsMediaPlayer1.TabIndex = 6;
-            // 
             // Main_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -351,6 +354,7 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.User.ResumeLayout(false);
             this.User.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -358,7 +362,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.ResumeLayout(false);
 
         }
