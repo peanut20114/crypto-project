@@ -193,6 +193,7 @@
             this.btn_selectAll.TabIndex = 1;
             this.btn_selectAll.Text = "Select all";
             this.btn_selectAll.UseVisualStyleBackColor = false;
+            this.btn_selectAll.Click += new System.EventHandler(this.btn_selectAll_Click);
             // 
             // btn_reload
             // 
@@ -205,6 +206,7 @@
             this.btn_reload.TabIndex = 0;
             this.btn_reload.Text = "ReLoad";
             this.btn_reload.UseVisualStyleBackColor = false;
+            this.btn_reload.Click += new System.EventHandler(this.btn_reload_Click);
             // 
             // User
             // 

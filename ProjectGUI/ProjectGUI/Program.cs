@@ -32,4 +32,10 @@ namespace ProjectGUI
         public string ECC_public_Key { get; set; }
         public string PassWord { get; set; }
     }
+    internal class Video
+    {
+        public string ID { get; set; }
+        public string Name { get; set; }
+        public string URL { get; set; }
+    }
 }

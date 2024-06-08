@@ -15,6 +15,10 @@
       "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:sign_up.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|C:\\Users\\LENOVO\\Documents\\crypto-project\\ProjectGUI\\ProjectGUI\\user_id.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:user_id.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|C:\\Users\\LENOVO\\Documents\\crypto-project\\ProjectGUI\\ProjectGUI\\privatekey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:privatekey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
@@ -33,10 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|C:\\Users\\LENOVO\\Documents\\crypto-project\\ProjectGUI\\ProjectGUI\\user_id.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:user_id.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|C:\\Users\\LENOVO\\Documents\\crypto-project\\ProjectGUI\\ProjectGUI\\user_id.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:user_id.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|C:\\Users\\LENOVO\\Documents\\crypto-project\\ProjectGUI\\ProjectGUI\\user_id.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -100,30 +100,31 @@
               "RelativeDocumentMoniker": "Main_Form.cs",
               "ToolTip": "C:\\Users\\LENOVO\\Documents\\crypto-project\\ProjectGUI\\ProjectGUI\\Main_Form.cs",
               "RelativeToolTip": "Main_Form.cs",
-              "ViewState": "AQIAAFMAAAAAAAAAAAAwwHMAAAA7AAAA",
+              "ViewState": "AQIAACAAAAAAAAAAAAAcwMQAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-05T10:23:44.059Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\LENOVO\\Documents\\crypto-project\\ProjectGUI\\ProjectGUI\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\LENOVO\\Documents\\crypto-project\\ProjectGUI\\ProjectGUI\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAyAAAA",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAwwCIAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-04T14:31:25.669Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "PrivateKey.cs [Design]",
               "DocumentMoniker": "C:\\Users\\LENOVO\\Documents\\crypto-project\\ProjectGUI\\ProjectGUI\\PrivateKey.cs",
               "RelativeDocumentMoniker": "PrivateKey.cs",
-              "ToolTip": "D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\PrivateKey.cs [Design]",
+              "ToolTip": "C:\\Users\\LENOVO\\Documents\\crypto-project\\ProjectGUI\\ProjectGUI\\PrivateKey.cs [Design]",
+              "RelativeToolTip": "PrivateKey.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-04T11:16:50.652Z"
             },
@@ -141,7 +142,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 3,
               "Title": "User_ID.cs",
               "DocumentMoniker": "C:\\Users\\LENOVO\\Documents\\crypto-project\\ProjectGUI\\ProjectGUI\\User_ID.cs",
               "RelativeDocumentMoniker": "User_ID.cs",
@@ -159,30 +160,30 @@
               "RelativeDocumentMoniker": "Sign_Up.cs",
               "ToolTip": "C:\\Users\\LENOVO\\Documents\\crypto-project\\ProjectGUI\\ProjectGUI\\Sign_Up.cs",
               "RelativeToolTip": "Sign_Up.cs",
-              "ViewState": "AQIAAEYAAAAAAAAAAAAcwFEAAAAYAAAA",
+              "ViewState": "AQIAACkAAAAAAAAAAAAIwEUAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-04T11:09:21.453Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Sign_In.cs",
               "DocumentMoniker": "C:\\Users\\LENOVO\\Documents\\crypto-project\\ProjectGUI\\ProjectGUI\\Sign_In.cs",
               "RelativeDocumentMoniker": "Sign_In.cs",
               "ToolTip": "C:\\Users\\LENOVO\\Documents\\crypto-project\\ProjectGUI\\ProjectGUI\\Sign_In.cs",
               "RelativeToolTip": "Sign_In.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAwwCIAAAAVAAAA",
+              "ViewState": "AQIAACoAAAAAAAAAAAAmwCIAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-04T11:08:13.762Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "User_ID.cs [Design]",
               "DocumentMoniker": "C:\\Users\\LENOVO\\Documents\\crypto-project\\ProjectGUI\\ProjectGUI\\User_ID.cs",
               "RelativeDocumentMoniker": "User_ID.cs",
-              "ToolTip": "C:\\Users\\LENOVO\\Downloads\\crypto-project\\ProjectGUI\\ProjectGUI\\User_ID.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\..\\Downloads\\crypto-project\\ProjectGUI\\ProjectGUI\\User_ID.cs [Design]",
+              "ToolTip": "C:\\Users\\LENOVO\\Documents\\crypto-project\\ProjectGUI\\ProjectGUI\\User_ID.cs [Design]",
+              "RelativeToolTip": "User_ID.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-04T11:01:18.261Z"
             },
@@ -199,11 +200,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Sign_In.cs [Design]",
               "DocumentMoniker": "C:\\Users\\LENOVO\\Documents\\crypto-project\\ProjectGUI\\ProjectGUI\\Sign_In.cs",
               "RelativeDocumentMoniker": "Sign_In.cs",
-              "ToolTip": "D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\Sign_In.cs [Design]",
+              "ToolTip": "C:\\Users\\LENOVO\\Documents\\crypto-project\\ProjectGUI\\ProjectGUI\\Sign_In.cs [Design]",
+              "RelativeToolTip": "Sign_In.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-04T06:30:44.913Z"
             }
