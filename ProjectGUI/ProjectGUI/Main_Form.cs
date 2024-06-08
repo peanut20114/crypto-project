@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WMPLib;
 using System.Security.Policy;
+using System.Reflection;
 
 namespace ProjectGUI
 {
@@ -40,13 +41,20 @@ namespace ProjectGUI
                     string videoPath = dialog.FileName;
                     string videoName = Path.GetFileName(videoPath);
 
+                    Crypto crypto = new Crypto();
+                    crypto.EncryptVideo(videoName);
+
+                    string exeFile = (new System.Uri(Assembly.GetEntryAssembly().CodeBase)).AbsolutePath;
+                    string exeDir = Path.GetDirectoryName(exeFile);
+                    string encryptedVideoPath = Path.Combine(exeDir, @"..\..\..\..\..\crypto-project\temp\ciphertext.txt");
+
                     // Authenticate with Firebase
                     var authProvider = new FirebaseAuthProvider(new FirebaseConfig(apiKey));
                     auth = await authProvider.SignInWithEmailAndPasswordAsync(email, password);
                     var cancellation = new CancellationTokenSource();
 
                     // Upload video
-                    using (var stream = File.Open(videoPath, FileMode.Open))
+                    using (var stream = File.Open(encryptedVideoPath, FileMode.Open))
                     {
                         var task = new FirebaseStorage(
                             bucket,
