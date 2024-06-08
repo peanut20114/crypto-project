@@ -42,11 +42,11 @@ namespace ProjectGUI
                     string videoName = Path.GetFileName(videoPath);
 
                     Crypto crypto = new Crypto();
-                    crypto.EncryptVideo(videoName);
+                    crypto.EncryptVideo(videoPath);
 
                     string exeFile = (new System.Uri(Assembly.GetEntryAssembly().CodeBase)).AbsolutePath;
                     string exeDir = Path.GetDirectoryName(exeFile);
-                    string encryptedVideoPath = Path.Combine(exeDir, @"..\..\..\..\..\crypto-project\temp\ciphertext.txt");
+                    string encryptedVideoPath = Path.Combine(exeDir, @"D:\temp\ciphertext.txt");
 
                     // Authenticate with Firebase
                     var authProvider = new FirebaseAuthProvider(new FirebaseConfig(apiKey));

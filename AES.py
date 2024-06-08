@@ -66,9 +66,9 @@ def generateRandomKeyandIV():
     # Generate random 128-bit key and IV
     key = os.urandom(16)
     iv = os.urandom(16)
-    with open('temp/AESkey.txt', 'wb') as file: 
+    with open('/../../../../temp/AESkey.txt', 'wb') as file: 
         file.write(key)
-    with open('temp/AESiv.txt', 'wb') as file: 
+    with open('/../../../../temp/AESiv.txt', 'wb') as file: 
         file.write(iv) 
     return key, iv
 
@@ -94,14 +94,14 @@ def encryptAESkey(key_path, sender_private_key_path, receiver_public_key_path):
     ).derive(shared_key)
 
     iv = os.urandom(16)
-    with open('temp/iv.txt', 'wb') as file: 
+    with open('/../../../../temp/iv.txt', 'wb') as file: 
         file.write(iv)
     cipher = Cipher(algorithms.AES(derived_key), modes.CBC(iv))
     encryptor = cipher.encryptor()
     padder = padding.PKCS7(128).padder()
     padded_data = padder.update(key) + padder.finalize()
     encrypted_aes_key = encryptor.update(padded_data) + encryptor.finalize()
-    with open('temp/AESkey.txt', 'wb') as file: 
+    with open('/../../../../temp/AESkey.txt', 'wb') as file: 
         file.write(encrypted_aes_key)
     return encrypted_aes_key
 
@@ -123,7 +123,7 @@ def decryptAESkey(encrypted_aes_key_path, receiver_private_key_path, sender_publ
         info=None,
     ).derive(shared_key)
 
-    with open('temp/iv.txt', 'rb') as file: 
+    with open('/../../../../temp/iv.txt', 'rb') as file: 
         iv = file.read()
     cipher = Cipher(algorithms.AES(derived_key), modes.CBC(iv))
     decryptor = cipher.decryptor()
@@ -140,7 +140,7 @@ def encryptVideo(file_name):
     aes_bytes = AES.read_file_into_bytes(file_name)
     encrypted_aes_bytes = AES.encrypt(key, iv, aes_bytes)
     
-    with open('temp/ciphertext.txt', 'wb') as file: 
+    with open('/../../../../temp/ciphertext.txt', 'wb') as file: 
         file.write(encrypted_aes_bytes)
     
    
@@ -154,7 +154,7 @@ def decryptVideo(file_name, key_path, iv_path):
 
     encrypted_aes_bytes = AES.read_file_into_bytes(file_name)
     recovered = AES.decrypt(key, iv, encrypted_aes_bytes)
-    with open('temp/recovered.mp4', 'wb') as file: 
+    with open('/../../../../temp/recovered.mp4', 'wb') as file: 
         file.write(recovered)
 
 if __name__ == "__main__":
