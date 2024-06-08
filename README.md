@@ -38,15 +38,15 @@ python AES.py encrypt input.mp4
 
 #### Video Decryption
 ```python
-python test.py decrypt ./temp/ciphertext.txt --key_path ./temp/AESkey.txt --iv_path ./temp/AESiv.txt
+python AES.py decrypt ./temp/ciphertext.txt --key_path ./temp/AESkey.txt --iv_path ./temp/AESiv.txt
 ```
 
 #### Key Encryption 
 ```python
-python test.py encryptAESkey ./temp/AESkey.txt --public_key ./temp/receiver_public_key.pem --private_key ./temp/sender_private_key.pem
+python AES.py encryptAESkey ./temp/AESkey.txt --public_key ./temp/receiver_public_key.pem --private_key ./temp/sender_private_key.pem
 ```
 
 #### Key Decryption 
 ```python 
-python test.py decryptAESkey ./temp/AESkey.txt --public_key ./temp/sender_public_key.pem --private_key ./temp/receiver_private_key.pem
+python AES.py decryptAESkey ./temp/AESkey.txt --public_key ./temp/sender_public_key.pem --private_key ./temp/receiver_private_key.pem
 ```
