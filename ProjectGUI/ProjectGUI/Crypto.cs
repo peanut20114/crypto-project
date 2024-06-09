@@ -103,7 +103,7 @@ namespace ProjectGUI
             }
         }
 
-        public void EncryptAESkey(string keyPath, string receiver_pub_path, string sender_pri_path)
+        public void EncryptAESkey(string keyPath, string receiver_pub_path, string sender_pri_path, string output_dir)
         {
             ProcessStartInfo psi = new ProcessStartInfo
             {
@@ -118,7 +118,7 @@ namespace ProjectGUI
             string exeDir = Path.GetDirectoryName(exeFile);
             var script = Path.Combine(exeDir, @"..\..\..\..\AES.py");
             string choice = "encryptAESkey";
-            psi.Arguments = $"\"{script}\" \"{choice}\" \"{keyPath}\" --public_key \"{receiver_pub_path}\" --private_key \"{sender_pri_path}\"";
+            psi.Arguments = $"\"{script}\" \"{choice}\" \"{keyPath}\" --public_key \"{receiver_pub_path}\" --private_key \"{sender_pri_path}\" --output_dir \"{output_dir}\"";
 
             string error = "";
             string result = "";

@@ -64,13 +64,13 @@ namespace ProjectGUI
         private async void btn_register_Click(object sender, EventArgs e) // Mark method as async
         {
             GenerateECCKeys(out string privateKeyPem, out string publicKeyPem);
-            string strippedPublicKey = RemovePemHeaderFooter(publicKeyPem);
+            //string strippedPublicKey = RemovePemHeaderFooter(publicKeyPem);
             var data = new User
             {
                 UserName = tb_username.Text,
                 PassWord = tb_password.Text,
                 Email = tb_Email.Text,
-                ECC_public_Key = strippedPublicKey
+                ECC_public_Key = publicKeyPem
             };
             data.ID = GenerateRandomNumber();
             SetResponse res = await client.SetAsync("USER/" + data.ID, data); // Await the async method call

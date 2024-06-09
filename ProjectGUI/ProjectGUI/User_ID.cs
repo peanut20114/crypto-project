@@ -49,10 +49,27 @@ namespace ProjectGUI
             {
                 if (!string.IsNullOrEmpty(receiverID))
                 {
-                    bool userExists = await CheckIfUserExists(receiverID);
+                    var (userExists, user_ECC_PubKey, recvName) = await CheckIfUserExists(receiverID);
                     if (userExists)
                     {
-                        await ShareVideoToUser(receiverID, videoname, videourl);
+                        string videoNameWithoutExtension = Path.GetFileNameWithoutExtension(videoname);
+
+                        // Save receiver's ECC Public Key
+                        string tempFolder = $@"D:\{videoNameWithoutExtension}_temp";
+                        string receiver_ECC_PublicKey_Path = Path.Combine(tempFolder, $"{recvName}_public_key.pem");
+                        File.WriteAllText(receiver_ECC_PublicKey_Path, user_ECC_PubKey);
+
+                        // Define sender private key
+                        string private_key_path = $@"D:\{username}_Key\{username}_private_key.pem";
+
+                        // Define AES key and iv
+                        string AESkey_path = $@"D:\{videoNameWithoutExtension}_temp\AESkey.txt";
+                        string AESiv_path = $@"D:\{videoNameWithoutExtension}_temp\AESiv.txt";
+
+                        Crypto crypto = new Crypto();
+                        crypto.EncryptAESkey(AESkey_path, receiver_ECC_PublicKey_Path, private_key_path, tempFolder);
+
+                        await ShareVideoToUser(receiverID, videoname, videourl, AESkey_path, AESiv_path);
                         MessageBox.Show("Video shared successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
@@ -72,7 +89,7 @@ namespace ProjectGUI
             }
         }
 
-        private async Task ShareVideoToUser(string receiverID, string vidName, string vidUrl)
+        private async Task ShareVideoToUser(string receiverID, string vidName, string vidUrl, string aesKey, string aesIV)
         {
             try
             {
@@ -103,7 +120,7 @@ namespace ProjectGUI
                         string newDownloadUrl = await task;
 
                         // Save the video metadata to the Firebase Realtime Database for the receiver
-                        await SaveVideoMetadataToDatabase(receiverID, vidName, newDownloadUrl);
+                        await SaveVideoMetadataToDatabase(receiverID, vidName, newDownloadUrl, aesKey, aesIV);
                     }
                 }
             }
@@ -113,14 +130,16 @@ namespace ProjectGUI
             }
         }
 
-        private async Task SaveVideoMetadataToDatabase(string userId, string videoName, string downloadUrl)
+        private async Task SaveVideoMetadataToDatabase(string userId, string videoName, string downloadUrl, string aesKey, string aesIV)
         {
             try
             {
+                string aeskey = File.ReadAllText(aesKey);
+                string iv = File.ReadAllText(aesIV);
                 var firebaseClient = new FirebaseClient(firebaseDatabaseUrl);
                 await firebaseClient
                     .Child("VIDEOS/" + userId) // Receiver's user ID
-                    .PostAsync(new { name = videoName, url = downloadUrl });
+                    .PostAsync(new { name = videoName, url = downloadUrl, Key = aeskey, IV = iv });
             }
             catch (Exception ex)
             {
@@ -128,7 +147,7 @@ namespace ProjectGUI
             }
         }
 
-        private async Task<bool> CheckIfUserExists(string userID)
+        private async Task<(bool, string, string)> CheckIfUserExists(string userID)
         {
             try
             {
@@ -136,17 +155,23 @@ namespace ProjectGUI
                 var user = await firebaseClient
                     .Child("USER")
                     .Child(userID)
-                    .OnceSingleAsync<object>();
+                    .OnceSingleAsync<User>();
 
-                // Check if user object is not null
-                return user != null;
+                // Check if user object is not null and has a ECC_public_Key
+                if (user != null)
+                {
+                    return (true, user.ECC_public_Key, user.UserName);
+                }
+                else
+                {
+                    return (false, null, null);
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error checking user existence: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
+                return (false, null, null);
             }
         }
-
     }
 }

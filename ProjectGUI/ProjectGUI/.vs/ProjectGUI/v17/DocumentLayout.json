@@ -1,53 +1,53 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\",
+  "WorkspaceRootPath": "D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|d:\\uit\\hk4_2023-2024\\matmahoc\\finalprojects\\crypto-project\\projectgui\\projectgui\\main_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:main_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\crypto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:crypto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\main_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:main_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\user_id.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\user_id.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:user_id.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\user_id.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:user_id.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\user_id.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:user_id.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\sign_up.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:sign_up.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\sign_up.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\sign_up.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:sign_up.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\sign_in.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\crypto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:crypto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|d:\\uit\\cryptography\\crypto-project\\projectgui\\projectgui\\main_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:main_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\main_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:main_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\user_id.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:user_id.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\user_id.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:user_id.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\sign_up.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:sign_up.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\sign_in.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:sign_in.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\sign_in.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\sign_in.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:sign_in.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     }
   ],
@@ -58,11 +58,27 @@
       "DocumentGroups": [
         {
           "DockedWidth": 14,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Bookmark",
@@ -78,11 +94,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Main_Form.cs",
-              "DocumentMoniker": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\Main_Form.cs",
+              "DocumentMoniker": "D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\Main_Form.cs",
               "RelativeDocumentMoniker": "Main_Form.cs",
-              "ToolTip": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\Main_Form.cs",
+              "ToolTip": "D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\Main_Form.cs",
               "RelativeToolTip": "Main_Form.cs",
               "ViewState": "AQIAABIBAAAAAAAAAAAuwCIBAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -91,23 +107,22 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Main_Form.cs [Design]",
-              "DocumentMoniker": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\Main_Form.cs",
+              "DocumentMoniker": "D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\Main_Form.cs",
               "RelativeDocumentMoniker": "Main_Form.cs",
               "ToolTip": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\Main_Form.cs [Design]",
-              "RelativeToolTip": "Main_Form.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\Main_Form.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T10:24:10.635Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-06-05T10:24:10.635Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\Program.cs",
+              "DocumentMoniker": "D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\Program.cs",
+              "ToolTip": "D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\Program.cs",
               "RelativeToolTip": "Program.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAAAwwCcAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -115,60 +130,64 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "User_ID.Designer.cs",
-              "DocumentMoniker": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\User_ID.Designer.cs",
+              "DocumentMoniker": "D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\User_ID.Designer.cs",
               "RelativeDocumentMoniker": "User_ID.Designer.cs",
-              "ToolTip": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\User_ID.Designer.cs",
+              "ToolTip": "D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\User_ID.Designer.cs",
               "RelativeToolTip": "User_ID.Designer.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T11:13:51.257Z"
+              "WhenOpened": "2024-06-04T11:13:51.257Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "User_ID.cs",
-              "DocumentMoniker": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\User_ID.cs",
+              "DocumentMoniker": "D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\User_ID.cs",
               "RelativeDocumentMoniker": "User_ID.cs",
-              "ToolTip": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\User_ID.cs",
+              "ToolTip": "D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\User_ID.cs",
               "RelativeToolTip": "User_ID.cs",
-              "ViewState": "AQIAADYAAAAAAAAAAAAAAEoAAAA3AAAA",
+              "ViewState": "AQIAAC4AAAAAAAAAAAAiwGAAAABYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T11:12:35.724Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Sign_Up.cs",
-              "DocumentMoniker": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\Sign_Up.cs",
-              "RelativeDocumentMoniker": "Sign_Up.cs",
-              "ToolTip": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\Sign_Up.cs",
-              "RelativeToolTip": "Sign_Up.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAHYAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T11:09:21.453Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "User_ID.cs [Design]",
-              "DocumentMoniker": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\User_ID.cs",
-              "RelativeDocumentMoniker": "User_ID.cs",
-              "ToolTip": "D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\User_ID.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\User_ID.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T11:01:18.261Z"
+              "WhenOpened": "2024-06-04T11:12:35.724Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Sign_Up.cs",
+              "DocumentMoniker": "D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\Sign_Up.cs",
+              "RelativeDocumentMoniker": "Sign_Up.cs",
+              "ToolTip": "D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\Sign_Up.cs",
+              "RelativeToolTip": "Sign_Up.cs",
+              "ViewState": "AQIAAFgAAAAAAAAAAADwv4MAAABcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T11:09:21.453Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "User_ID.cs [Design]",
+              "DocumentMoniker": "D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\User_ID.cs",
+              "RelativeDocumentMoniker": "User_ID.cs",
+              "ToolTip": "D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\User_ID.cs [Design]",
+              "RelativeToolTip": "User_ID.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T11:01:18.261Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Crypto.cs",
-              "DocumentMoniker": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\Crypto.cs",
+              "DocumentMoniker": "D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\Crypto.cs",
               "RelativeDocumentMoniker": "Crypto.cs",
-              "ToolTip": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\Crypto.cs",
+              "ToolTip": "D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\Crypto.cs",
               "RelativeToolTip": "Crypto.cs",
-              "ViewState": "AQIAAHQAAAAAAAAAAAAkwFoAAABIAAAA",
+              "ViewState": "AQIAAGYAAAAAAAAAAAAgwHIAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-08T11:31:33.208Z",
               "EditorCaption": ""
@@ -177,9 +196,9 @@
               "$type": "Document",
               "DocumentIndex": 11,
               "Title": "packages.config",
-              "DocumentMoniker": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\packages.config",
+              "DocumentMoniker": "D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\packages.config",
               "RelativeDocumentMoniker": "packages.config",
-              "ToolTip": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\packages.config",
+              "ToolTip": "D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\packages.config",
               "RelativeToolTip": "packages.config",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
@@ -189,9 +208,9 @@
               "$type": "Document",
               "DocumentIndex": 9,
               "Title": "Sign_In.cs",
-              "DocumentMoniker": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\Sign_In.cs",
+              "DocumentMoniker": "D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\Sign_In.cs",
               "RelativeDocumentMoniker": "Sign_In.cs",
-              "ToolTip": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\Sign_In.cs",
+              "ToolTip": "D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\Sign_In.cs",
               "RelativeToolTip": "Sign_In.cs",
               "ViewState": "AQIAABoAAAAAAAAAAAAAwBEAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -199,23 +218,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Sign_Up.cs [Design]",
-              "DocumentMoniker": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\Sign_Up.cs",
+              "DocumentMoniker": "D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\Sign_Up.cs",
               "RelativeDocumentMoniker": "Sign_Up.cs",
               "ToolTip": "D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\Sign_Up.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\Sign_Up.cs [Design]",
+              "RelativeToolTip": "Sign_Up.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T07:41:09.374Z"
+              "WhenOpened": "2024-06-04T07:41:09.374Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
               "Title": "Sign_In.cs [Design]",
-              "DocumentMoniker": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\Sign_In.cs",
+              "DocumentMoniker": "D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\Sign_In.cs",
               "RelativeDocumentMoniker": "Sign_In.cs",
               "ToolTip": "D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\Sign_In.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\Sign_In.cs [Design]",
+              "RelativeToolTip": "Sign_In.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-04T06:30:44.913Z"
             }
