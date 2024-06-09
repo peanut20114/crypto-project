@@ -73,7 +73,7 @@ namespace ProjectGUI
             var script = Path.Combine(exeDir, @"..\..\..\..\AES.py");
             string choice = "decrypt";
 
-            psi.Arguments = $"\"{script}\" \"{choice}\" \"{videoName}\" \"{keyPath}\" \"{ivPath}\"";
+            psi.Arguments = $"\"{script}\" \"{choice}\" \"{videoName}\" --key_path \"{keyPath}\" --iv_path \"{ivPath}\"";
 
             string error = "";
             string result = "";

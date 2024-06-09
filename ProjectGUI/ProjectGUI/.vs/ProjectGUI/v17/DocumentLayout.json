@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\main_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|d:\\uit\\hk4_2023-2024\\matmahoc\\finalprojects\\crypto-project\\projectgui\\projectgui\\main_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:main_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|d:\\uit\\hk4_2023-2024\\matmahoc\\finalprojects\\crypto-project\\projectgui\\projectgui\\crypto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\crypto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:crypto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -84,7 +84,7 @@
               "RelativeDocumentMoniker": "Main_Form.cs",
               "ToolTip": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\Main_Form.cs",
               "RelativeToolTip": "Main_Form.cs",
-              "ViewState": "AQIAADwAAAAAAAAAAAAiwFoAAAB5AAAA",
+              "ViewState": "AQIAABIBAAAAAAAAAAAuwCIBAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-05T10:23:44.059Z",
               "EditorCaption": ""
@@ -168,7 +168,7 @@
               "RelativeDocumentMoniker": "Crypto.cs",
               "ToolTip": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\Crypto.cs",
               "RelativeToolTip": "Crypto.cs",
-              "ViewState": "AQIAAJ0AAAAAAAAAAAAowKYAAAAAAAAA",
+              "ViewState": "AQIAAHQAAAAAAAAAAAAkwFoAAABIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-08T11:31:33.208Z",
               "EditorCaption": ""

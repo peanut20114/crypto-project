@@ -126,7 +126,7 @@
             // 
             this.axWindowsMediaPlayer1.Enabled = true;
             this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(3, 80);
-            this.axWindowsMediaPlayer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.axWindowsMediaPlayer1.Margin = new System.Windows.Forms.Padding(4);
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
             this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(657, 450);
@@ -182,6 +182,7 @@
             this.btn_decrypt.TabIndex = 2;
             this.btn_decrypt.Text = "Decrypt video";
             this.btn_decrypt.UseVisualStyleBackColor = false;
+            this.btn_decrypt.Click += new System.EventHandler(this.btn_decrypt_Click);
             // 
             // btn_selectAll
             // 

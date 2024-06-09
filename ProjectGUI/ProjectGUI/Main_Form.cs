@@ -10,6 +10,8 @@ using WMPLib;
 using System.Security.Policy;
 using System.Reflection;
 using Firebase.Database.Query;
+using System.Security.Cryptography;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace ProjectGUI
 {
@@ -26,6 +28,7 @@ namespace ProjectGUI
         private readonly string email = "22520731@gm.uit.edu.vn";
         private readonly string password = "1061100235";
         private readonly string firebaseDatabaseUrl = "https://crypto-project-2e5b1-default-rtdb.asia-southeast1.firebasedatabase.app/";
+        private string globalVideoPath;
         private FirebaseAuthLink auth;
 
         private async void btn_upload_Click(object sender, EventArgs e)
@@ -41,6 +44,7 @@ namespace ProjectGUI
                 {
                     string videoPath = dialog.FileName;
                     string videoName = Path.GetFileName(videoPath);
+                    globalVideoPath = videoPath;
                     string vid = Path.GetFileNameWithoutExtension(videoPath);
                     Crypto crypto = new Crypto();
                     crypto.EncryptVideo(videoPath);
@@ -270,6 +274,29 @@ namespace ProjectGUI
             user_ID.Show();
 
 
+        }
+
+        private async void btn_decrypt_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string videoName = Path.GetFileName(globalVideoPath);
+                string videoNameWithoutExtension = Path.GetFileNameWithoutExtension(globalVideoPath);
+                string folder = $@"D:\{videoNameWithoutExtension}_temp";
+                string encryptedVideoPath = Path.Combine(folder, videoName);
+                string keyPath = Path.Combine(folder, "AESkey.txt");
+                string ivPath = Path.Combine(folder, "AESiv.txt");
+                Crypto crypto = new Crypto();
+                crypto.DecryptVideo(encryptedVideoPath, keyPath, ivPath);
+                string output = folder + "/recovered.mp4";
+                /*axWindowsMediaPlayer1.URL = output;
+                axWindowsMediaPlayer1.Ctlcontrols.play();*/
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine("Exception details: " + ex.ToString());
+            }
         }
     }
 }
