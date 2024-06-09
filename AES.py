@@ -2,11 +2,26 @@ import os
 from os import system, path
 import argparse
 import random 
-from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
-from cryptography.hazmat.backends import default_backend
-from cryptography.hazmat.primitives import padding, hashes, serialization
-from cryptography.hazmat.primitives.asymmetric import ec
-from cryptography.hazmat.primitives.kdf.hkdf import HKDF
+try: 
+    import cryptography
+    from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
+    from cryptography.hazmat.backends import default_backend
+    from cryptography.hazmat.primitives import padding, hashes, serialization
+    from cryptography.hazmat.primitives.asymmetric import ec
+    from cryptography.hazmat.primitives.kdf.hkdf import HKDF
+    from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+    import base64 
+
+except: 
+    system("pip install cryptography")
+    import cryptography
+    from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
+    from cryptography.hazmat.backends import default_backend
+    from cryptography.hazmat.primitives import padding, hashes, serialization
+    from cryptography.hazmat.primitives.asymmetric import ec
+    from cryptography.hazmat.primitives.kdf.hkdf import HKDF
+    from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+    import base64
 
 class AES:
     @staticmethod
@@ -118,8 +133,8 @@ def encryptVideo(file_name):
     key, iv = generateRandomKeyandIV(output_dir)
     aes_bytes = AES.read_file_into_bytes(file_name)
     encrypted_aes_bytes = AES.encrypt(key, iv, aes_bytes)
-    
-    encrypted_file_path = os.path.join(output_dir, 'ciphertext.txt')
+    output_name = base_file_name+'.txt'
+    encrypted_file_path = os.path.join(output_dir, output_name)
     AES.write_bytes_to_file(encrypted_file_path, encrypted_aes_bytes)
     return encrypted_file_path
 
@@ -147,6 +162,7 @@ if __name__ == "__main__":
     parser.add_argument('--private_key', help="Path to the sender's private key (for encryption) or receiver's private key (for decryption)", default=None)
     parser.add_argument('--key_path', default=None)
     parser.add_argument('--iv_path', default=None)
+    parser.add_argument('--output_dir', default=None)
     args = parser.parse_args()
 
     file_name = args.input_file
@@ -155,6 +171,7 @@ if __name__ == "__main__":
     private_key_path = args.private_key
     key_path = args.key_path 
     iv_path = args.iv_path
+    output_dir = args.output_dir
     
     if choice.lower() == "encrypt":
         encryptVideo(file_name)
@@ -167,9 +184,9 @@ if __name__ == "__main__":
         if not file_name and not private_key_path and not public_key_path:
             print("Sender private key and receiver public key are required to encrypt AES key")
             exit(1)
-        encryptAESkey(file_name, private_key_path, public_key_path)
+        encryptAESkey(file_name, private_key_path, public_key_path, output_dir)
     elif choice.lower() == "decryptaeskey":
-        decryptAESkey(file_name, private_key_path, public_key_path)
+        decryptAESkey(file_name, private_key_path, public_key_path, output_dir)
         
     else:
         print("Invalid choice. Supported choices are: encrypt, decrypt, encryptAESkey, decryptAESkey.")
