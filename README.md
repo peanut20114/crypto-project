@@ -30,6 +30,7 @@ options:
                         Path to the sender's private key (for encryption) or receiver's private key (for decryption)
   --key_path KEY_PATH
   --iv_path IV_PATH
+  --output_dir OUTPUT_DIR
 ```
 #### Video Encryption
 ```python 
@@ -43,10 +44,10 @@ python AES.py decrypt ./temp/ciphertext.txt --key_path ./temp/AESkey.txt --iv_pa
 
 #### Key Encryption 
 ```python
-python AES.py encryptAESkey ./temp/AESkey.txt --public_key ./temp/receiver_public_key.pem --private_key ./temp/sender_private_key.pem
+python AES.py encryptAESkey ./temp/AESkey.txt --public_key ./temp/receiver_public_key.pem --private_key ./temp/sender_private_key.pem --output_dir D:/input_temp/
 ```
 
 #### Key Decryption 
 ```python 
-python AES.py decryptAESkey ./temp/AESkey.txt --public_key ./temp/sender_public_key.pem --private_key ./temp/receiver_private_key.pem
+python AES.py decryptAESkey ./temp/AESkey.txt --public_key ./temp/sender_public_key.pem --private_key ./temp/receiver_private_key.pem --output_dir D:/input_temp/
 ```
