@@ -2,35 +2,17 @@ import os
 from os import system, path
 import argparse
 import random 
-try: 
-    import cryptography
-    from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
-    from cryptography.hazmat.backends import default_backend
-    from cryptography.hazmat.primitives import padding, hashes, serialization
-    from cryptography.hazmat.primitives.asymmetric import ec
-    from cryptography.hazmat.primitives.kdf.hkdf import HKDF
-    from cryptography.hazmat.primitives.ciphers.aead import AESGCM
-    import base64 
+from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
+from cryptography.hazmat.backends import default_backend
+from cryptography.hazmat.primitives import padding, hashes, serialization
+from cryptography.hazmat.primitives.asymmetric import ec
+from cryptography.hazmat.primitives.kdf.hkdf import HKDF
 
-except: 
-    system("pip install cryptography")
-    import cryptography
-    from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
-    from cryptography.hazmat.backends import default_backend
-    from cryptography.hazmat.primitives import padding, hashes, serialization
-    from cryptography.hazmat.primitives.asymmetric import ec
-    from cryptography.hazmat.primitives.kdf.hkdf import HKDF
-    from cryptography.hazmat.primitives.ciphers.aead import AESGCM
-    import base64 
-    
 class AES:
     @staticmethod
     def encrypt(key, iv, plaintext):
-        # Create a padder instance
         padder = padding.PKCS7(algorithms.AES.block_size).padder()
-        # Add padding to the plaintext
         padded_plaintext = padder.update(plaintext) + padder.finalize()
-        # Encrypt the padded plaintext
         backend = default_backend()
         cipher = Cipher(algorithms.AES(key), modes.CBC(iv), backend=backend)
         encryptor = cipher.encryptor()
@@ -39,49 +21,38 @@ class AES:
 
     @staticmethod
     def decrypt(key, iv, ciphertext):
-        # Decrypt the ciphertext
         backend = default_backend()
         cipher = Cipher(algorithms.AES(key), modes.CBC(iv), backend=backend)
         decryptor = cipher.decryptor()
         decrypted_data = decryptor.update(ciphertext) + decryptor.finalize()
-        # Create an unpadder instance
         unpadder = padding.PKCS7(algorithms.AES.block_size).unpadder()
-        # Remove padding from the decrypted data
         plaintext = unpadder.update(decrypted_data) + unpadder.finalize()
         return plaintext
 
-    # Read video file into bytes
+    @staticmethod
     def read_file_into_bytes(file_path):
         with open(file_path, 'rb') as file:
             file_bytes = file.read()
         return file_bytes
 
-    # Write bytes to file
+    @staticmethod
     def write_bytes_to_file(file_path, data):
         with open(file_path, 'wb') as file:
             file.write(data)
             
             
-def generateRandomKeyandIV():
-    # Generate random 128-bit key and IV
+def generateRandomKeyandIV(output_dir):
     key = os.urandom(16)
     iv = os.urandom(16)
-    folder_path = "D:/temp"
-    if not os.path.exists(folder_path):
-        # Create the folder
-        os.makedirs(folder_path)
-        print(f"Folder '{folder_path}' created.")
-    else:
-        print(f"Folder '{folder_path}' already exists.")
-    with open('D:/temp/AESkey.txt', 'wb') as file: 
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+    with open(os.path.join(output_dir, 'AESkey.txt'), 'wb') as file: 
         file.write(key)
-    with open('D:/temp/AESiv.txt', 'wb') as file: 
+    with open(os.path.join(output_dir, 'AESiv.txt'), 'wb') as file: 
         file.write(iv) 
     return key, iv
 
-def encryptAESkey(key_path, sender_private_key_path, receiver_public_key_path):
-    # When sharing the encrypted video, 
-    # the key is encrypted with sender private key and receiver publickey
+def encryptAESkey(key_path, sender_private_key_path, receiver_public_key_path, output_dir):
     with open(key_path, 'rb') as file: 
         key = file.read()
     with open(sender_private_key_path, 'rb') as key_file:
@@ -101,18 +72,18 @@ def encryptAESkey(key_path, sender_private_key_path, receiver_public_key_path):
     ).derive(shared_key)
 
     iv = os.urandom(16)
-    with open('D:/temp/iv.txt', 'wb') as file: 
+    with open(os.path.join(output_dir, 'iv.txt'), 'wb') as file: 
         file.write(iv)
     cipher = Cipher(algorithms.AES(derived_key), modes.CBC(iv))
     encryptor = cipher.encryptor()
     padder = padding.PKCS7(128).padder()
     padded_data = padder.update(key) + padder.finalize()
     encrypted_aes_key = encryptor.update(padded_data) + encryptor.finalize()
-    with open('D:/temp/AESkey.txt', 'wb') as file: 
+    with open(os.path.join(output_dir, 'AESkey.txt'), 'wb') as file: 
         file.write(encrypted_aes_key)
     return encrypted_aes_key
 
-def decryptAESkey(encrypted_aes_key_path, receiver_private_key_path, sender_public_key_path):
+def decryptAESkey(encrypted_aes_key_path, receiver_private_key_path, sender_public_key_path, output_dir):
     with open(encrypted_aes_key_path, 'rb') as file: 
         encrypted_aes_key = file.read()
     with open(receiver_private_key_path, 'rb') as key_file:
@@ -130,7 +101,7 @@ def decryptAESkey(encrypted_aes_key_path, receiver_private_key_path, sender_publ
         info=None,
     ).derive(shared_key)
 
-    with open('D:/temp/iv.txt', 'rb') as file: 
+    with open(os.path.join(output_dir, 'iv.txt'), 'rb') as file: 
         iv = file.read()
     cipher = Cipher(algorithms.AES(derived_key), modes.CBC(iv))
     decryptor = cipher.decryptor()
@@ -142,17 +113,20 @@ def decryptAESkey(encrypted_aes_key_path, receiver_private_key_path, sender_publ
     return key
 
 def encryptVideo(file_name):
-    # Generate random key and iv, encrypt the video and store in ciphertext 
-    key, iv = generateRandomKeyandIV()
+    base_file_name = os.path.splitext(os.path.basename(file_name))[0]
+    output_dir = f'D:/{base_file_name}_temp'
+    key, iv = generateRandomKeyandIV(output_dir)
     aes_bytes = AES.read_file_into_bytes(file_name)
     encrypted_aes_bytes = AES.encrypt(key, iv, aes_bytes)
     
-    with open('D:/temp/ciphertext.txt', 'wb') as file: 
-        file.write(encrypted_aes_bytes)
-    
-   
+    encrypted_file_path = os.path.join(output_dir, 'ciphertext.txt')
+    AES.write_bytes_to_file(encrypted_file_path, encrypted_aes_bytes)
+    return encrypted_file_path
 
 def decryptVideo(file_name, key_path, iv_path):
+    base_file_name = os.path.splitext(os.path.basename(file_name))[0]
+    output_dir = f'D:/{base_file_name}_temp'
+    
     with open(key_path, 'rb') as file: 
        key = file.read()
         
@@ -161,8 +135,9 @@ def decryptVideo(file_name, key_path, iv_path):
 
     encrypted_aes_bytes = AES.read_file_into_bytes(file_name)
     recovered = AES.decrypt(key, iv, encrypted_aes_bytes)
-    with open('D:/temp/recovered.mp4', 'wb') as file: 
-        file.write(recovered)
+    recovered_file_path = os.path.join(output_dir, 'recovered.mp4')
+    AES.write_bytes_to_file(recovered_file_path, recovered)
+    return recovered_file_path
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Enter the path of the file to encrypt or decrypt')
