@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using WMPLib;
 using System.Security.Policy;
 using System.Reflection;
+using Firebase.Database.Query;
 
 namespace ProjectGUI
 {
@@ -40,13 +41,18 @@ namespace ProjectGUI
                 {
                     string videoPath = dialog.FileName;
                     string videoName = Path.GetFileName(videoPath);
-
+                    string vid = Path.GetFileNameWithoutExtension(videoPath);
                     Crypto crypto = new Crypto();
                     crypto.EncryptVideo(videoPath);
 
-                    string exeFile = (new System.Uri(Assembly.GetEntryAssembly().CodeBase)).AbsolutePath;
+                    string exeFile = new Uri(Assembly.GetEntryAssembly().CodeBase).LocalPath;
                     string exeDir = Path.GetDirectoryName(exeFile);
-                    string encryptedVideoPath = Path.Combine(exeDir, @"D:\temp\ciphertext.txt");
+
+                    // Construct the path: D:/[video_name]_temp/ciphertext.txt
+                    string tempFolder = $@"D:\{vid}_temp";
+                    Directory.CreateDirectory(tempFolder); // Ensure the directory exists
+                    string outputName = vid + ".txt";
+                    string encryptedVideoPath = Path.Combine(tempFolder, outputName);
 
                     // Authenticate with Firebase
                     var authProvider = new FirebaseAuthProvider(new FirebaseConfig(apiKey));
@@ -226,6 +232,33 @@ namespace ProjectGUI
             }
         }
 
+        private async Task<(bool, string)> CheckIfUserExists(string userID)
+        {
+            try
+            {
+                var firebaseClient = new FirebaseClient(firebaseDatabaseUrl);
+                var user = await firebaseClient
+                    .Child("USER")
+                    .Child(userID)
+                    .OnceSingleAsync<User>();
+
+                // Check if user object is not null and has a ECC_public_Key
+                if (user != null)
+                {
+                    return (true, user.ECC_public_Key);
+                }
+                else
+                {
+                    return (false, null);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error checking user existence: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return (false, null);
+            }
+        }
+
         private void btn_share_Click(object sender, EventArgs e)
         {
             var selectedItem = lv_listVideos.SelectedItems[0];
@@ -235,6 +268,8 @@ namespace ProjectGUI
             string userID = tb_id.Text;
             User_ID user_ID = new User_ID(videoName, videoUrl, userName, userID);
             user_ID.Show();
+
+
         }
     }
 }

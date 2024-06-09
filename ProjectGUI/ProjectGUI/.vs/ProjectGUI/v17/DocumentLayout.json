@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\main_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:main_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|d:\\uit\\hk4_2023-2024\\matmahoc\\finalprojects\\crypto-project\\projectgui\\projectgui\\crypto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:crypto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\main_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:main_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\main_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:main_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\user_id.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -39,10 +43,6 @@
       "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:sign_in.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\main_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:main_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C98188A6-8725-4093-A724-D0F8829FCE02}|ProjectGUI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -58,7 +58,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 14,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -78,26 +78,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Main_Form.cs",
               "DocumentMoniker": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\Main_Form.cs",
               "RelativeDocumentMoniker": "Main_Form.cs",
               "ToolTip": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\Main_Form.cs",
               "RelativeToolTip": "Main_Form.cs",
-              "ViewState": "AQIAAL4AAAAAAAAAAAAvwOwAAAAbAAAA",
+              "ViewState": "AQIAADwAAAAAAAAAAAAiwFoAAAB5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T10:23:44.059Z"
+              "WhenOpened": "2024-06-05T10:23:44.059Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 2,
               "Title": "Main_Form.cs [Design]",
               "DocumentMoniker": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\Main_Form.cs",
               "RelativeDocumentMoniker": "Main_Form.cs",
-              "ToolTip": "D:\\UIT\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\Main_Form.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Cryptography\\crypto-project\\ProjectGUI\\ProjectGUI\\Main_Form.cs [Design]",
+              "ToolTip": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\Main_Form.cs [Design]",
+              "RelativeToolTip": "Main_Form.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T10:24:10.635Z"
+              "WhenOpened": "2024-06-05T10:24:10.635Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -113,7 +115,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "User_ID.Designer.cs",
               "DocumentMoniker": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\User_ID.Designer.cs",
               "RelativeDocumentMoniker": "User_ID.Designer.cs",
@@ -125,7 +127,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "User_ID.cs",
               "DocumentMoniker": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\User_ID.cs",
               "RelativeDocumentMoniker": "User_ID.cs",
@@ -137,7 +139,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Sign_Up.cs",
               "DocumentMoniker": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\Sign_Up.cs",
               "RelativeDocumentMoniker": "Sign_Up.cs",
@@ -149,7 +151,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "User_ID.cs [Design]",
               "DocumentMoniker": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\User_ID.cs",
               "RelativeDocumentMoniker": "User_ID.cs",
@@ -160,13 +162,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Crypto.cs",
               "DocumentMoniker": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\Crypto.cs",
               "RelativeDocumentMoniker": "Crypto.cs",
               "ToolTip": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\Crypto.cs",
               "RelativeToolTip": "Crypto.cs",
-              "ViewState": "AQIAAI8AAAAAAAAAAAAkwKgAAAAfAAAA",
+              "ViewState": "AQIAAJ0AAAAAAAAAAAAowKYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-08T11:31:33.208Z",
               "EditorCaption": ""
@@ -185,7 +187,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Sign_In.cs",
               "DocumentMoniker": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\Sign_In.cs",
               "RelativeDocumentMoniker": "Sign_In.cs",
@@ -197,7 +199,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Sign_Up.cs [Design]",
               "DocumentMoniker": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\Sign_Up.cs",
               "RelativeDocumentMoniker": "Sign_Up.cs",
@@ -208,7 +210,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Sign_In.cs [Design]",
               "DocumentMoniker": "D:\\UIT\\HK4_2023-2024\\MatMaHoc\\FinalProjects\\crypto-project\\ProjectGUI\\ProjectGUI\\Sign_In.cs",
               "RelativeDocumentMoniker": "Sign_In.cs",
