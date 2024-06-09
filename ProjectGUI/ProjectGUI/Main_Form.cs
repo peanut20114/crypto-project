@@ -231,7 +231,9 @@ namespace ProjectGUI
             var selectedItem = lv_listVideos.SelectedItems[0];
             string videoName = selectedItem.SubItems[0].Text;
             string videoUrl = selectedItem.SubItems[1].Text;
-            User_ID user_ID = new User_ID(videoName, videoUrl);
+            string userName = tb_username.Text;
+            string userID = tb_id.Text;
+            User_ID user_ID = new User_ID(videoName, videoUrl, userName, userID);
             user_ID.Show();
         }
     }

@@ -19,12 +19,14 @@ namespace ProjectGUI
 {
     public partial class User_ID : Form
     {
-        private string videoname, videourl;
-        public User_ID(string videoName, string videoUrl)
+        private string videoname, videourl, username, userid;
+        public User_ID(string videoName, string videoUrl, string userName, string userID)
         {
             InitializeComponent();
             videoname = videoName;
             videourl = videoUrl;
+            username = userName;
+            userid = userID;
         }
 
 
