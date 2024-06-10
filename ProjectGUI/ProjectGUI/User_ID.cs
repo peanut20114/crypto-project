@@ -63,14 +63,17 @@ namespace ProjectGUI
                         // Define sender private key
                         string private_key_path = $@"D:\{username}_Key\{username}_private_key.pem";
 
-                        // Define AES key and iv
+                        // Define AES key and iv for video
                         string AESkey_path = $@"D:\{videoNameWithoutExtension}_temp\AESkey.txt";
                         string AESiv_path = $@"D:\{videoNameWithoutExtension}_temp\AESiv.txt";
+
+                        // Define IV for aes key
+                        string iv_path = $@"D:\{videoNameWithoutExtension}_temp\iv.txt";
 
                         Crypto crypto = new Crypto();
                         crypto.EncryptAESkey(AESkey_path, receiver_ECC_PublicKey_Path, private_key_path, tempFolder);
 
-                        await ShareVideoToUser(receiverID, videoname, videourl, AESkey_path, AESiv_path, userpubkey);
+                        await ShareVideoToUser(receiverID, videoname, videourl, AESkey_path, AESiv_path, iv_path, userpubkey);
                         MessageBox.Show("Video shared successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
@@ -90,7 +93,7 @@ namespace ProjectGUI
             }
         }
 
-        private async Task ShareVideoToUser(string receiverID, string vidName, string vidUrl, string aesKey, string aesIV, string senderPublicKey)
+        private async Task ShareVideoToUser(string receiverID, string vidName, string vidUrl, string aesKey, string aesIV, string iv, string senderPublicKey)
         {
             try
             {
@@ -121,7 +124,7 @@ namespace ProjectGUI
                         string newDownloadUrl = await task;
 
                         // Save the video metadata to the Firebase Realtime Database for the receiver
-                        await SaveVideoMetadataToDatabase(receiverID, vidName, newDownloadUrl, aesKey, aesIV, senderPublicKey);
+                        await SaveVideoMetadataToDatabase(receiverID, vidName, newDownloadUrl, aesKey, aesIV, iv, senderPublicKey);
                     }
                 }
             }
@@ -131,16 +134,17 @@ namespace ProjectGUI
             }
         }
 
-        private async Task SaveVideoMetadataToDatabase(string userId, string videoName, string downloadUrl, string aesKey, string aesIV, string senderPubicKey)
+        private async Task SaveVideoMetadataToDatabase(string userId, string videoName, string downloadUrl, string aesKey, string aesIV, string keyIV,  string senderPubicKey)
         {
             try
             {
+                string keyiv = File.ReadAllText(keyIV);
                 string aeskey = File.ReadAllText(aesKey);
                 string iv = File.ReadAllText(aesIV);
                 var firebaseClient = new FirebaseClient(firebaseDatabaseUrl);
                 await firebaseClient
                     .Child("VIDEOS/" + userId) // Receiver's user ID
-                    .PostAsync(new { name = videoName, url = downloadUrl, sender_ECC_Pub_Key = senderPubicKey, Key = aeskey, IV = iv });
+                    .PostAsync(new { name = videoName, url = downloadUrl, sender_ECC_Pub_Key = senderPubicKey, Key = aeskey, IV = iv,  IV_key = keyiv});
             }
             catch (Exception ex)
             {
