@@ -189,27 +189,20 @@ namespace ProjectGUI
             {
                 try
                 {
-                    // Kiểm tra xem có mục nào được chọn không
-                    if (lv_listVideos.SelectedItems.Count == 0)
-                    {
-                        MessageBox.Show("Please select a file to download.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
-                    else
-                    {
-                        string url = selectedItem.SubItems[1].Text;
-                        string videoName = Path.GetFileName(video_Name);
 
-                        string videoNameWithoutExtension = Path.GetFileNameWithoutExtension(video_Name);
-                        string folder = $@"D:\{videoNameWithoutExtension}_temp";
-                        string encryptedVideoPath = Path.Combine(folder, videoNameWithoutExtension + ".mp4");
-                        await DownloadFileFromFirebaseStorage(url, encryptedVideoPath);
-                        string keyPath = Path.Combine(folder, "AESkey.txt");
-                        string ivPath = Path.Combine(folder, "AESiv.txt");
-                        Crypto crypto = new Crypto();
-                        crypto.DecryptVideo(encryptedVideoPath, keyPath, ivPath);
-                        MessageBox.Show("Files downloaded successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    string url = selectedItem.SubItems[1].Text;
+                    string videoName = Path.GetFileName(video_Name);
+
+                    string videoNameWithoutExtension = Path.GetFileNameWithoutExtension(video_Name);
+                    string folder = $@"D:\{videoNameWithoutExtension}_temp";
+                    string encryptedVideoPath = Path.Combine(folder, videoNameWithoutExtension + ".mp4");
+                    await DownloadFileFromFirebaseStorage(url, encryptedVideoPath);
+                    string keyPath = Path.Combine(folder, "AESkey.txt");
+                    string ivPath = Path.Combine(folder, "AESiv.txt");
+                    Crypto crypto = new Crypto();
+                    crypto.DecryptVideo(encryptedVideoPath, keyPath, ivPath);
+                    MessageBox.Show("Files downloaded successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 }
                 catch (Exception ex)
                 {
