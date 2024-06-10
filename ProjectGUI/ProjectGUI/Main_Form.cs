@@ -185,7 +185,6 @@ namespace ProjectGUI
 
 
             var (AES_Key_Are_Null, aesKey, aesIV, sender_pub_key, ivKey) = await CheckIfVideoAESFieldsAreNull(video_Name, curUserID);
-            MessageBox.Show($"{aesKey} {aesIV} {ivKey}");
             if (AES_Key_Are_Null)
             {
                 try
@@ -240,8 +239,6 @@ namespace ProjectGUI
                 Crypto crypto = new Crypto();
 
                 crypto.DecryptAESkey(AESkey_path, senderPubKey_path, privateKeyPath, folder);
-                MessageBox.Show($"{encryptedVideoPath} {AESkey_path} {AESiv_path} ");
-
                 crypto.DecryptVideo(encryptedVideoPath, AESkey_path, AESiv_path);
 
             }

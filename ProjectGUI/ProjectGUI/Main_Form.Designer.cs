@@ -129,17 +129,17 @@
             this.axWindowsMediaPlayer1.Margin = new System.Windows.Forms.Padding(4);
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(747, 458);
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(459, 329);
             this.axWindowsMediaPlayer1.TabIndex = 6;
             // 
             // btn_download
             // 
             this.btn_download.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btn_download.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_download.Location = new System.Drawing.Point(534, 4);
+            this.btn_download.Location = new System.Drawing.Point(459, 4);
             this.btn_download.Margin = new System.Windows.Forms.Padding(0);
             this.btn_download.Name = "btn_download";
-            this.btn_download.Size = new System.Drawing.Size(213, 91);
+            this.btn_download.Size = new System.Drawing.Size(137, 91);
             this.btn_download.TabIndex = 5;
             this.btn_download.Text = "Download";
             this.btn_download.UseVisualStyleBackColor = false;
@@ -149,10 +149,10 @@
             // 
             this.btn_upload.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btn_upload.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_upload.Location = new System.Drawing.Point(349, 4);
+            this.btn_upload.Location = new System.Drawing.Point(318, 4);
             this.btn_upload.Margin = new System.Windows.Forms.Padding(0);
             this.btn_upload.Name = "btn_upload";
-            this.btn_upload.Size = new System.Drawing.Size(185, 91);
+            this.btn_upload.Size = new System.Drawing.Size(141, 91);
             this.btn_upload.TabIndex = 4;
             this.btn_upload.Text = "Upload";
             this.btn_upload.UseVisualStyleBackColor = false;
@@ -162,10 +162,10 @@
             // 
             this.btn_share.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btn_share.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_share.Location = new System.Drawing.Point(230, 63);
+            this.btn_share.Location = new System.Drawing.Point(215, 63);
             this.btn_share.Margin = new System.Windows.Forms.Padding(0);
             this.btn_share.Name = "btn_share";
-            this.btn_share.Size = new System.Drawing.Size(119, 32);
+            this.btn_share.Size = new System.Drawing.Size(88, 32);
             this.btn_share.TabIndex = 3;
             this.btn_share.Text = "Share";
             this.btn_share.UseVisualStyleBackColor = false;
@@ -175,12 +175,12 @@
             // 
             this.btn_decrypt.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btn_decrypt.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_decrypt.Location = new System.Drawing.Point(104, 63);
+            this.btn_decrypt.Location = new System.Drawing.Point(92, 63);
             this.btn_decrypt.Margin = new System.Windows.Forms.Padding(0);
             this.btn_decrypt.Name = "btn_decrypt";
-            this.btn_decrypt.Size = new System.Drawing.Size(126, 32);
+            this.btn_decrypt.Size = new System.Drawing.Size(123, 32);
             this.btn_decrypt.TabIndex = 2;
-            this.btn_decrypt.Text = "Decrypt video";
+            this.btn_decrypt.Text = "Play Video";
             this.btn_decrypt.UseVisualStyleBackColor = false;
             this.btn_decrypt.Click += new System.EventHandler(this.btn_decrypt_Click);
             // 
@@ -191,7 +191,7 @@
             this.btn_selectAll.Location = new System.Drawing.Point(3, 63);
             this.btn_selectAll.Margin = new System.Windows.Forms.Padding(0);
             this.btn_selectAll.Name = "btn_selectAll";
-            this.btn_selectAll.Size = new System.Drawing.Size(101, 32);
+            this.btn_selectAll.Size = new System.Drawing.Size(89, 32);
             this.btn_selectAll.TabIndex = 1;
             this.btn_selectAll.Text = "Select all";
             this.btn_selectAll.UseVisualStyleBackColor = false;
@@ -204,7 +204,7 @@
             this.btn_reload.Location = new System.Drawing.Point(3, 4);
             this.btn_reload.Margin = new System.Windows.Forms.Padding(0);
             this.btn_reload.Name = "btn_reload";
-            this.btn_reload.Size = new System.Drawing.Size(346, 59);
+            this.btn_reload.Size = new System.Drawing.Size(306, 59);
             this.btn_reload.TabIndex = 0;
             this.btn_reload.Text = "ReLoad";
             this.btn_reload.UseVisualStyleBackColor = false;
@@ -222,7 +222,7 @@
             this.User.Location = new System.Drawing.Point(4, 25);
             this.User.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.User.Name = "User";
-            this.User.Size = new System.Drawing.Size(1243, 659);
+            this.User.Size = new System.Drawing.Size(1038, 644);
             this.User.TabIndex = 1;
             this.User.Text = "User";
             // 
