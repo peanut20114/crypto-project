@@ -240,7 +240,7 @@ namespace ProjectGUI
 
                 crypto.DecryptAESkey(AESkey_path, senderPubKey_path, privateKeyPath, folder);
                 crypto.DecryptVideo(encryptedVideoPath, AESkey_path, AESiv_path);
-
+                MessageBox.Show("Files downloaded successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -342,17 +342,17 @@ namespace ProjectGUI
                     .OnceAsync<dynamic>())
                     .FirstOrDefault()?.Object;
 
-                if (videoMetadata != null && videoMetadata.Key != null )
+                if (videoMetadata != null && videoMetadata.AESKeyUrl != null)
                 {
-                    string aesKey = videoMetadata.Key;
-                    string aesIV = videoMetadata.IV;
+                    string aesKey = videoMetadata.AESKeyUrl;
+                    string aesIV = videoMetadata.AESIVUrl;
                     string senderPubKey = videoMetadata.sender_ECC_Pub_Key;
-                    string ivKey = videoMetadata.IV_key;
+                    string ivKey = videoMetadata.IVUrl;
 
-                    
-                    return (false, aesKey, aesIV,senderPubKey,ivKey); // Key and IV exist and are not null
+
+                    return (false, aesKey, aesIV, senderPubKey, ivKey); // Key and IV exist and are not null
                 }
-                return (true, null, null, null,null); // If no Key or IV found, assume AES fields are null
+                return (true, null, null, null, null); // If no Key or IV found, assume AES fields are null
             }
             catch (Exception ex)
             {
