@@ -294,7 +294,6 @@ namespace ProjectGUI
                 {
                     try
                     {
-                        MessageBox.Show("No key");
                         string videoName = Path.GetFileName(globalVideoPath);
                         string videoNameWithoutExtension = Path.GetFileNameWithoutExtension(globalVideoPath);
                         string folder = $@"D:\{videoNameWithoutExtension}_temp";
@@ -315,7 +314,6 @@ namespace ProjectGUI
                 }
                 else
                 {
-                    MessageBox.Show("Có key");
                     string video = Path.GetFileNameWithoutExtension(video_Name);
                     string tempFolder = $@"D:\Receive\{video}_temp";
                     Directory.CreateDirectory(tempFolder);
@@ -329,8 +327,6 @@ namespace ProjectGUI
                     string curUserName = tb_username.Text;
                     string directoryPath = Path.Combine("D:\\", $"{curUserName}_Key");
                     string privateKeyPath = Path.Combine(directoryPath, $"{curUserName}_private_key.pem");
-                    MessageBox.Show($"{sender_pub_key}");
-                   
                     crypto.DecryptAESkey(AESkey_path,senderPubKey_path, privateKeyPath, tempFolder);
                 }
             }
@@ -353,7 +349,7 @@ namespace ProjectGUI
                 {
                     string aesKey = videoMetadata.Key;
                     string aesIV = videoMetadata.IV;
-                    string senderPubKey = videoMetadata.SenderPubKey;
+                    string senderPubKey = videoMetadata.sender_ECC_Pub_Key;
                     return (false, aesKey, aesIV,senderPubKey); // Key and IV exist and are not null
                 }
                 return (true, null, null, null); // If no Key or IV found, assume AES fields are null
