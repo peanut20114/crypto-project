@@ -123,8 +123,13 @@ namespace ProjectGUI
 
                         string newDownloadUrl = await task;
 
+                        // Upload the additional files to Firebase Storage
+                        string aesKeyUrl = await UploadFileToFirebaseStorage(receiverID, "AESkey.txt", aesKey);
+                        string aesIVUrl = await UploadFileToFirebaseStorage(receiverID, "AESiv.txt", aesIV);
+                        string ivUrl = await UploadFileToFirebaseStorage(receiverID, "iv.txt", iv);
+
                         // Save the video metadata to the Firebase Realtime Database for the receiver
-                        await SaveVideoMetadataToDatabase(receiverID, vidName, newDownloadUrl, aesKey, aesIV, iv, senderPublicKey);
+                        await SaveVideoMetadataToDatabase(receiverID, vidName, newDownloadUrl, aesKeyUrl, aesIVUrl, ivUrl, senderPublicKey);
                     }
                 }
             }
@@ -134,17 +139,50 @@ namespace ProjectGUI
             }
         }
 
-        private async Task SaveVideoMetadataToDatabase(string userId, string videoName, string downloadUrl, string aesKey, string aesIV, string keyIV,  string senderPubicKey)
+        private async Task<string> UploadFileToFirebaseStorage(string receiverID, string fileName, string filePath)
         {
             try
             {
-                string keyiv = File.ReadAllText(keyIV);
-                string aeskey = File.ReadAllText(aesKey);
-                string iv = File.ReadAllText(aesIV);
+                using (var stream = File.OpenRead(filePath))
+                {
+                    var task = new FirebaseStorage(
+                        bucket,
+                        new FirebaseStorageOptions
+                        {
+                            AuthTokenAsyncFactory = () => Task.FromResult(auth.FirebaseToken),
+                            ThrowOnCancel = true,
+                        })
+                        .Child("FILES")
+                        .Child(receiverID)
+                        .Child(fileName)
+                        .PutAsync(stream);
+
+                    return await task;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error uploading {fileName}: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
+
+        private async Task SaveVideoMetadataToDatabase(string userId, string videoName, string downloadUrl, string aesKeyUrl, string aesIVUrl, string ivUrl, string senderPublicKey)
+        {
+            try
+            {
                 var firebaseClient = new FirebaseClient(firebaseDatabaseUrl);
                 await firebaseClient
                     .Child("VIDEOS/" + userId) // Receiver's user ID
-                    .PostAsync(new { name = videoName, url = downloadUrl, sender_ECC_Pub_Key = senderPubicKey, Key = aeskey, IV = iv,  IV_key = keyiv});
+                    .PostAsync(new
+                    {
+                        name = videoName,
+                        url = downloadUrl,
+                        sender_ECC_Pub_Key = senderPublicKey,
+                        AESKeyUrl = aesKeyUrl,
+                        AESIVUrl = aesIVUrl,
+                        IVUrl = ivUrl
+                    });
             }
             catch (Exception ex)
             {
