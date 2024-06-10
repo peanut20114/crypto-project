@@ -17,6 +17,7 @@ namespace ProjectGUI
     {
         public string curUser_name;
         public string curUser_ID;
+        public string curUser_PubKey;
         IFirebaseConfig config = new FirebaseConfig
         {
             AuthSecret = "GdfCwWCBpxKuxjX1yZfEr3Tplc1VdaS1YsTIuLLR",
@@ -61,6 +62,7 @@ namespace ProjectGUI
                 string userName = userData.UserName;
                 string userEmail = userData.Email;
                 string userPassword = userData.PassWord;
+                string userPubKey = userData.ECC_public_Key;
 
                 if((userName == tb_username.Text) && userPassword == tb_password.Text)
                 {
@@ -68,13 +70,14 @@ namespace ProjectGUI
                     Program.UserID = userID;
                     curUser_ID = userData.ID;
                     curUser_name = userData.UserName;
+                    curUser_PubKey = userData.ECC_public_Key;
                     break;
                 }
             }
             if (loginFlag)
             {
                 this.Hide();
-                Main_Form main_Form = new Main_Form(curUser_name, curUser_ID);
+                Main_Form main_Form = new Main_Form(curUser_name, curUser_ID, curUser_PubKey);
                 main_Form.Show();
                 
             }

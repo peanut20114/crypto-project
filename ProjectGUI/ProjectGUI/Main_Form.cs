@@ -18,11 +18,14 @@ namespace ProjectGUI
 {
     public partial class Main_Form : Form
     {
-        public Main_Form(string username, string id)
+        private string userPubKey;
+
+        public Main_Form(string username, string id, string publickey)
         {
             InitializeComponent();
             tb_username.Text = username;
             tb_id.Text = id;
+            userPubKey = publickey;
         }
         private readonly string bucket = "crypto-project-2e5b1.appspot.com";
         private readonly string apiKey = "AIzaSyCzy--9BTNYjgbevL5mNC_HOUni4pswcJs";
@@ -271,7 +274,7 @@ namespace ProjectGUI
             string videoUrl = selectedItem.SubItems[1].Text;
             string userName = tb_username.Text;
             string userID = tb_id.Text;
-            User_ID user_ID = new User_ID(videoName, videoUrl, userName, userID);
+            User_ID user_ID = new User_ID(videoName, videoUrl, userName, userID, userPubKey);
             user_ID.Show();
 
 
@@ -340,7 +343,7 @@ namespace ProjectGUI
                     string directoryPath = Path.Combine("D:\\", $"{curUserName}_Key");
                     string privateKeyPath = Path.Combine(directoryPath, $"{curUserName}_private_key.pem");
                     string publicKeyPath = "D:\\tkhang11_Key\\tkhang11_public_key.pem";
-                    crypto.DecryptAESkey(AESkey_path,publicKeyPath, privateKeyPath);
+                    crypto.DecryptAESkey(AESkey_path,publicKeyPath, privateKeyPath, tempFolder);
                 }
             }
             catch { }
