@@ -14,6 +14,7 @@ using System.Security.Cryptography;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 using System.Linq;
 using System.Collections.Generic;
+using Org.BouncyCastle.Asn1.X509;
 
 namespace ProjectGUI
 {
@@ -289,7 +290,7 @@ namespace ProjectGUI
                 ListViewItem selectedItem = lv_listVideos.SelectedItems[0];
                 string video_Name = selectedItem.SubItems[0].Text.Trim(); // Lấy tên video từ ListView
                 string curUserID = tb_id.Text.Trim();
-                var (AES_Key_Are_Null, aesKey, aesIV, sender_pub_key) = await CheckIfVideoAESFieldsAreNull(video_Name, curUserID);
+                var (AES_Key_Are_Null, aesKey, aesIV, sender_pub_key, ivKey) = await CheckIfVideoAESFieldsAreNull(video_Name, curUserID);
                 if ( AES_Key_Are_Null )
                 {
                     try
@@ -299,7 +300,7 @@ namespace ProjectGUI
                         string folder = $@"D:\{videoNameWithoutExtension}_temp";
                         string encryptedVideoPath = Path.Combine(folder, videoName);
                         string keyPath = Path.Combine(folder, "AESkey.txt");
-                        string ivPath = Path.Combine(folder, "AESiv.txt");
+                        string ivPath = Path.Combine(folder, "AESiv.txt");                       
                         Crypto crypto = new Crypto();
                         crypto.DecryptVideo(encryptedVideoPath, keyPath, ivPath);
                         string output = folder + "/recovered.mp4";
@@ -320,11 +321,14 @@ namespace ProjectGUI
                     string AESkey_path = Path.Combine(tempFolder, "AESkey.txt");
                     string AESiv_path = Path.Combine(tempFolder, "AESiv.txt");
                     string senderPubKey_path = Path.Combine(tempFolder, "sender_public_key.pem");
+                    string ivKeyPath = Path.Combine(tempFolder, "iv.txt");
                     File.WriteAllText(AESkey_path, aesKey);
                     File.WriteAllText(AESiv_path, aesIV);
                     File.WriteAllText(senderPubKey_path, sender_pub_key);
+                    File.WriteAllText(ivKeyPath, ivKey);
                     Crypto crypto = new Crypto();
                     string curUserName = tb_username.Text;
+                    MessageBox.Show($"{curUserName}");
                     string directoryPath = Path.Combine("D:\\", $"{curUserName}_Key");
                     string privateKeyPath = Path.Combine(directoryPath, $"{curUserName}_private_key.pem");
                     crypto.DecryptAESkey(AESkey_path,senderPubKey_path, privateKeyPath, tempFolder);
@@ -332,7 +336,7 @@ namespace ProjectGUI
             }
             catch { }
         }
-        private async Task<(bool, string, string, string)> CheckIfVideoAESFieldsAreNull(string videoName, string userId)
+        private async Task<(bool, string, string, string, string)> CheckIfVideoAESFieldsAreNull(string videoName, string userId)
         {
             try
             {
@@ -350,14 +354,15 @@ namespace ProjectGUI
                     string aesKey = videoMetadata.Key;
                     string aesIV = videoMetadata.IV;
                     string senderPubKey = videoMetadata.sender_ECC_Pub_Key;
-                    return (false, aesKey, aesIV,senderPubKey); // Key and IV exist and are not null
+                    string ivKey = videoMetadata.IV_key;
+                    return (false, aesKey, aesIV,senderPubKey,ivKey); // Key and IV exist and are not null
                 }
-                return (true, null, null, null); // If no Key or IV found, assume AES fields are null
+                return (true, null, null, null,null); // If no Key or IV found, assume AES fields are null
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error checking video AES fields: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return (true, null, null, null); // On error, assume AES fields are null
+                return (true, null, null, null, null); // On error, assume AES fields are null
             }
         }
 

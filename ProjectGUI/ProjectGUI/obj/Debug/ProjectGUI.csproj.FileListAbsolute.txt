@@ -628,3 +628,12 @@ D:\KY4\Crypto\crypto-project\ProjectGUI\ProjectGUI\obj\Debug\ProjectGUI.csproj.C
 D:\KY4\Crypto\crypto-project\ProjectGUI\ProjectGUI\obj\Debug\ProjectGUI.csproj.Up2Date
 D:\KY4\Crypto\crypto-project\ProjectGUI\ProjectGUI\obj\Debug\ProjectGUI.exe
 D:\KY4\Crypto\crypto-project\ProjectGUI\ProjectGUI\obj\Debug\ProjectGUI.pdb
+D:\KY4\Crypto\project\crypto-project\ProjectGUI\ProjectGUI\bin\Debug\Firebase.Auth.dll
+D:\KY4\Crypto\project\crypto-project\ProjectGUI\ProjectGUI\bin\Debug\Firebase.Storage.dll
+D:\KY4\Crypto\project\crypto-project\ProjectGUI\ProjectGUI\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\KY4\Crypto\project\crypto-project\ProjectGUI\ProjectGUI\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\KY4\Crypto\project\crypto-project\ProjectGUI\ProjectGUI\bin\Debug\Interop.WMPLib.dll
+D:\KY4\Crypto\project\crypto-project\ProjectGUI\ProjectGUI\bin\Debug\AxInterop.WMPLib.dll
+D:\KY4\Crypto\project\crypto-project\ProjectGUI\ProjectGUI\obj\Debug\Interop.WMPLib.dll
+D:\KY4\Crypto\project\crypto-project\ProjectGUI\ProjectGUI\obj\Debug\AxInterop.WMPLib.dll
+D:\KY4\Crypto\project\crypto-project\ProjectGUI\ProjectGUI\obj\Debug\ProjectGUI.csproj.ResolveComReference.cache
