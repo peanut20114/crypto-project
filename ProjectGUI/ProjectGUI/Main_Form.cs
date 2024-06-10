@@ -15,6 +15,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 using System.Linq;
 using System.Collections.Generic;
 using Org.BouncyCastle.Asn1.X509;
+using System.Net.Http;
 
 namespace ProjectGUI
 {
@@ -178,46 +179,85 @@ namespace ProjectGUI
 
         private async void btn_download_Click(object sender, EventArgs e)
         {
-            try
+            ListViewItem selectedItem = lv_listVideos.SelectedItems[0];
+            string video_Name = selectedItem.SubItems[0].Text.Trim();
+            string curUserID = tb_id.Text;
+
+
+            var (AES_Key_Are_Null, aesKey, aesIV, sender_pub_key, ivKey) = await CheckIfVideoAESFieldsAreNull(video_Name, curUserID);
+            MessageBox.Show($"{aesKey} {aesIV} {ivKey}");
+            if (AES_Key_Are_Null)
             {
-                // Kiểm tra xem có mục nào được chọn không
-                if (lv_listVideos.SelectedItems.Count == 0)
+                try
                 {
-                    MessageBox.Show("Please select a file to download.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-
-                // Hiển thị hộp thoại chọn thư mục để lưu tập tin đã tải xuống
-                FolderBrowserDialog folderDialog = new FolderBrowserDialog();
-                if (folderDialog.ShowDialog() == DialogResult.OK)
-                {
-                    string destinationFolder = folderDialog.SelectedPath;
-
-                    // Lặp qua tất cả các mục được chọn trong ListView
-                    foreach (ListViewItem selectedItem in lv_listVideos.SelectedItems)
+                    // Kiểm tra xem có mục nào được chọn không
+                    if (lv_listVideos.SelectedItems.Count == 0)
                     {
-                        // Lấy URL của video từ mục được chọn trong ListView
-                        string url = selectedItem.SubItems[1].Text; // Giả sử URL được lưu tại cột thứ hai trong ListView
-
-                        // Lấy tên tệp từ URL
-                        string fileName = Path.GetFileName(new Uri(url).LocalPath);
-
-                        // Tạo đường dẫn đầy đủ của tệp
-                        string filePath = Path.Combine(destinationFolder, fileName);
-
-                        // Thực hiện tải xuống và lưu vào thư mục đích
-                        using (var client = new System.Net.WebClient())
-                        {
-                            await client.DownloadFileTaskAsync(url, filePath);
-                        }
+                        MessageBox.Show("Please select a file to download.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
                     }
+                    else
+                    {
+                        string url = selectedItem.SubItems[1].Text;
+                        string videoName = Path.GetFileName(video_Name);
 
-                    MessageBox.Show("Files downloaded successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        string videoNameWithoutExtension = Path.GetFileNameWithoutExtension(video_Name);
+                        string folder = $@"D:\{videoNameWithoutExtension}_temp";
+                        string encryptedVideoPath = Path.Combine(folder, videoNameWithoutExtension + ".mp4");
+                        await DownloadFileFromFirebaseStorage(url, encryptedVideoPath);
+                        string keyPath = Path.Combine(folder, "AESkey.txt");
+                        string ivPath = Path.Combine(folder, "AESiv.txt");
+                        Crypto crypto = new Crypto();
+                        crypto.DecryptVideo(encryptedVideoPath, keyPath, ivPath);
+                        MessageBox.Show("Files downloaded successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string url = selectedItem.SubItems[1].Text;
+                string videoNameWithoutExtension = Path.GetFileNameWithoutExtension(video_Name);
+                string folder = $@"D:\{videoNameWithoutExtension}_temp";
+                string encryptedVideoPath = Path.Combine(folder, videoNameWithoutExtension + ".mp4");
+                Directory.CreateDirectory(folder);
+                string AESkey_path = Path.Combine(folder, "AESkey.txt");
+                string AESiv_path = Path.Combine(folder, "AESiv.txt");
+                string ivKey_path = Path.Combine(folder, "iv.txt");
+
+                string senderPubKey_path = Path.Combine(folder, "sender_public_key.pem");
+                File.WriteAllText(senderPubKey_path, sender_pub_key);
+                await DownloadFileFromFirebaseStorage(aesIV, AESiv_path);
+                await DownloadFileFromFirebaseStorage(aesKey, AESkey_path);
+                await DownloadFileFromFirebaseStorage(ivKey, ivKey_path);
+                await DownloadFileFromFirebaseStorage(url, encryptedVideoPath);
+                string curUserName = tb_username.Text;
+                string directoryPath = Path.Combine("D:\\", $"{curUserName}_Key");
+                string privateKeyPath = Path.Combine(directoryPath, $"{curUserName}_private_key.pem");
+                Crypto crypto = new Crypto();
+
+                crypto.DecryptAESkey(AESkey_path, senderPubKey_path, privateKeyPath, folder);
+                MessageBox.Show($"{encryptedVideoPath} {AESkey_path} {AESiv_path} ");
+
+                crypto.DecryptVideo(encryptedVideoPath, AESkey_path, AESiv_path);
+
+            }
+        }
+
+        static async Task DownloadFileFromFirebaseStorage(string fileUrl, string localPath)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                HttpResponseMessage response = await client.GetAsync(fileUrl);
+                response.EnsureSuccessStatusCode();
+
+                using (FileStream fs = new FileStream(localPath, FileMode.Create, FileAccess.Write, FileShare.None))
+                {
+                    await response.Content.CopyToAsync(fs);
+                }
             }
         }
 
@@ -284,65 +324,13 @@ namespace ProjectGUI
 
         private async void btn_decrypt_Click(object sender, EventArgs e)
         {
-
-            try
-            {
-                ListViewItem selectedItem = lv_listVideos.SelectedItems[0];
-                string video_Name = selectedItem.SubItems[0].Text.Trim(); // Lấy tên video từ ListView
-                string curUserID = tb_id.Text.Trim();
-                var (AES_Key_Are_Null, aesKey, aesIV, sender_pub_key, ivKey) = await CheckIfVideoAESFieldsAreNull(video_Name, curUserID);
-                if ( AES_Key_Are_Null )
-                {
-                    try
-                    {
-                        string videoName = Path.GetFileName(globalVideoPath);
-                        string videoNameWithoutExtension = Path.GetFileNameWithoutExtension(globalVideoPath);
-
-                        string folder = $@"D:\{videoNameWithoutExtension}_temp";
-                        string encryptedVideoPath = Path.Combine(folder, videoNameWithoutExtension + ".txt");
-                        string keyPath = Path.Combine(folder, "AESkey.txt");
-                        string ivPath = Path.Combine(folder, "AESiv.txt");                       
-                        Crypto crypto = new Crypto();
-                        crypto.DecryptVideo(encryptedVideoPath, keyPath, ivPath);
-                        string output = folder + "/recovered.mp4";
-                        axWindowsMediaPlayer1.URL = output;
-                        axWindowsMediaPlayer1.Ctlcontrols.play();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        Console.WriteLine("Exception details: " + ex.ToString());
-                    }
-                }
-                else
-                {
-                    string videoName = Path.GetFileName(globalVideoPath);
-                    string videoNameWithoutExtension = Path.GetFileNameWithoutExtension(globalVideoPath);
-
-                    string folder = $@"D:\{videoNameWithoutExtension}_temp";
-                    string encryptedVideoPath = Path.Combine(folder, videoNameWithoutExtension + ".txt");
-
-                    
-                    string AESkey_path = Path.Combine(folder, "AESkey.txt");
-                    string AESiv_path = Path.Combine(folder, "AESiv.txt");
-                    string senderPubKey_path = Path.Combine(folder, "sender_public_key.pem");
-                    string ivKeyPath = Path.Combine(folder, "iv.txt");
-                    byte[] aesIVbytes = Convert.FromBase64String(aesIV);
-                    byte[] ivKeybytes = Convert.FromBase64String(ivKey);
-                    File.WriteAllText(AESkey_path, aesKey);
-                    File.WriteAllBytes(AESiv_path, aesIVbytes);
-                    File.WriteAllText(senderPubKey_path, sender_pub_key);
-                    File.WriteAllBytes(ivKeyPath, ivKeybytes);
-                    Crypto crypto = new Crypto();
-                    string curUserName = tb_username.Text;
-                    MessageBox.Show($"{curUserName}");
-                    string directoryPath = Path.Combine("D:\\", $"{curUserName}_Key");
-                    string privateKeyPath = Path.Combine(directoryPath, $"{curUserName}_private_key.pem");
-                    crypto.DecryptAESkey(AESkey_path, senderPubKey_path, privateKeyPath, folder);
-                    crypto.DecryptVideo(encryptedVideoPath, AESkey_path, AESiv_path);
-                }
-            }
-            catch { }
+            ListViewItem selectedItem = lv_listVideos.SelectedItems[0];
+            string video_Name = selectedItem.SubItems[0].Text.Trim();
+            string videoNameWithoutExtension = Path.GetFileNameWithoutExtension(video_Name);
+            string folder = $@"D:\{videoNameWithoutExtension}_temp";
+            string VideoPath = Path.Combine(folder, "recovered.mp4");
+            axWindowsMediaPlayer1.URL = VideoPath;
+            axWindowsMediaPlayer1.Ctlcontrols.play();
         }
         private async Task<(bool, string, string, string, string)> CheckIfVideoAESFieldsAreNull(string videoName, string userId)
         {
