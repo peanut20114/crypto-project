@@ -162,7 +162,7 @@ namespace ProjectGUI
             string exeFile = new Uri(Assembly.GetEntryAssembly().CodeBase).AbsolutePath;
             string exeDir = Path.GetDirectoryName(exeFile);
             var script = Path.Combine(exeDir, @"..\..\..\..\AES.py");
-            string choice = "encryptAESkey";
+            string choice = "decryptAESkey";
             psi.Arguments = $"\"{script}\" \"{choice}\" \"{keyPath}\" --public_key \"{sender_pub_path}\" --private_key \"{receiver_pri_path}\"";
 
             string error = "";

@@ -12,6 +12,7 @@ using System.Reflection;
 using Firebase.Database.Query;
 using System.Security.Cryptography;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
+using System.Linq;
 
 namespace ProjectGUI
 {
@@ -278,7 +279,7 @@ namespace ProjectGUI
 
         private async void btn_decrypt_Click(object sender, EventArgs e)
         {
-            try
+           /* try
             {
                 string videoName = Path.GetFileName(globalVideoPath);
                 string videoNameWithoutExtension = Path.GetFileNameWithoutExtension(globalVideoPath);
@@ -289,14 +290,91 @@ namespace ProjectGUI
                 Crypto crypto = new Crypto();
                 crypto.DecryptVideo(encryptedVideoPath, keyPath, ivPath);
                 string output = folder + "/recovered.mp4";
-                /*axWindowsMediaPlayer1.URL = output;
-                axWindowsMediaPlayer1.Ctlcontrols.play();*/
+                axWindowsMediaPlayer1.URL = output;
+                axWindowsMediaPlayer1.Ctlcontrols.play();
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Console.WriteLine("Exception details: " + ex.ToString());
+            } */
+
+            try
+            {
+                ListViewItem selectedItem = lv_listVideos.SelectedItems[0];
+                string video_Name = selectedItem.SubItems[0].Text.Trim(); // Lấy tên video từ ListView
+                string curUserID = tb_id.Text.Trim();
+                var (AES_Key_Are_Null, aesKey, aesIV) = await CheckIfVideoAESFieldsAreNull(video_Name, curUserID);
+                if ( AES_Key_Are_Null == true)
+                {
+                    try
+                    {
+                        string videoName = Path.GetFileName(globalVideoPath);
+                        string videoNameWithoutExtension = Path.GetFileNameWithoutExtension(globalVideoPath);
+                        string folder = $@"D:\{videoNameWithoutExtension}_temp";
+                        string encryptedVideoPath = Path.Combine(folder, videoName);
+                        string keyPath = Path.Combine(folder, "AESkey.txt");
+                        string ivPath = Path.Combine(folder, "AESiv.txt");
+                        Crypto crypto = new Crypto();
+                        crypto.DecryptVideo(encryptedVideoPath, keyPath, ivPath);
+                        string output = folder + "/recovered.mp4";
+                        axWindowsMediaPlayer1.URL = output;
+                        axWindowsMediaPlayer1.Ctlcontrols.play();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Console.WriteLine("Exception details: " + ex.ToString());
+                    }
+                }
+                else
+                {
+                    string tempFolder = $@"D:\{video_Name}_temp";
+                    Directory.CreateDirectory(tempFolder);
+                    string AESkey_path = Path.Combine(tempFolder, "AESkey.txt");
+                    string AESiv_path = Path.Combine(tempFolder, "AESiv.txt");
+                    File.WriteAllText(AESkey_path, aesKey);
+                    File.WriteAllText(AESiv_path, aesIV);
+                    Crypto crypto = new Crypto();
+                    string curUserName = tb_username.Text;
+                    string directoryPath = Path.Combine("D:\\", $"{curUserName}_Key");
+                    string privateKeyPath = Path.Combine(directoryPath, $"{curUserName}_private_key.pem");
+                    string publicKeyPath = "D:\\tkhang11_Key\\tkhang11_public_key.pem";
+                    crypto.DecryptAESkey(AESkey_path,publicKeyPath, privateKeyPath);
+                }
+            }
+            catch { }
+        }
+        private async Task<(bool, string, string)> CheckIfVideoAESFieldsAreNull(string videoName, string userId)
+        {
+            try
+            {
+                var firebaseClient = new FirebaseClient(firebaseDatabaseUrl);
+                var videoMetadata = (await firebaseClient
+                    .Child("VIDEOS")
+                    .Child(userId)
+                    .OrderBy("name")
+                    .EqualTo(videoName)
+                    .OnceAsync<dynamic>())
+                    .FirstOrDefault()?.Object;
+
+                if (videoMetadata != null && videoMetadata.Key != null && videoMetadata.IV != null)
+                {
+                    string aesKey = videoMetadata.Key;
+                    string aesIV = videoMetadata.IV;
+                    return (false, aesKey, aesIV); // Key and IV exist and are not null
+                }
+                return (true, null, null); // If no Key or IV found, assume AES fields are null
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error checking video AES fields: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return (true, null, null); // On error, assume AES fields are null
             }
         }
+
+
+
+
     }
 }

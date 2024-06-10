@@ -29,7 +29,7 @@ namespace ProjectGUI
         public string Email { get; set; }
         public string UserName { get; set; }
         public string ECC_public_Key { get; set; }
-        public string PassWord { get; set; }
+        public string PassWord { get; set; }        
     }
     internal class Video
     {
