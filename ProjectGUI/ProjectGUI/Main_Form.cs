@@ -297,8 +297,9 @@ namespace ProjectGUI
                     {
                         string videoName = Path.GetFileName(globalVideoPath);
                         string videoNameWithoutExtension = Path.GetFileNameWithoutExtension(globalVideoPath);
+
                         string folder = $@"D:\{videoNameWithoutExtension}_temp";
-                        string encryptedVideoPath = Path.Combine(folder, videoName);
+                        string encryptedVideoPath = Path.Combine(folder, videoNameWithoutExtension + ".txt");
                         string keyPath = Path.Combine(folder, "AESkey.txt");
                         string ivPath = Path.Combine(folder, "AESiv.txt");                       
                         Crypto crypto = new Crypto();
@@ -315,23 +316,30 @@ namespace ProjectGUI
                 }
                 else
                 {
-                    string video = Path.GetFileNameWithoutExtension(video_Name);
-                    string tempFolder = $@"D:\Receive\{video}_temp";
-                    Directory.CreateDirectory(tempFolder);
-                    string AESkey_path = Path.Combine(tempFolder, "AESkey.txt");
-                    string AESiv_path = Path.Combine(tempFolder, "AESiv.txt");
-                    string senderPubKey_path = Path.Combine(tempFolder, "sender_public_key.pem");
-                    string ivKeyPath = Path.Combine(tempFolder, "iv.txt");
+                    string videoName = Path.GetFileName(globalVideoPath);
+                    string videoNameWithoutExtension = Path.GetFileNameWithoutExtension(globalVideoPath);
+
+                    string folder = $@"D:\{videoNameWithoutExtension}_temp";
+                    string encryptedVideoPath = Path.Combine(folder, videoNameWithoutExtension + ".txt");
+
+                    
+                    string AESkey_path = Path.Combine(folder, "AESkey.txt");
+                    string AESiv_path = Path.Combine(folder, "AESiv.txt");
+                    string senderPubKey_path = Path.Combine(folder, "sender_public_key.pem");
+                    string ivKeyPath = Path.Combine(folder, "iv.txt");
+                    byte[] aesIVbytes = Convert.FromBase64String(aesIV);
+                    byte[] ivKeybytes = Convert.FromBase64String(ivKey);
                     File.WriteAllText(AESkey_path, aesKey);
-                    File.WriteAllText(AESiv_path, aesIV);
+                    File.WriteAllBytes(AESiv_path, aesIVbytes);
                     File.WriteAllText(senderPubKey_path, sender_pub_key);
-                    File.WriteAllText(ivKeyPath, ivKey);
+                    File.WriteAllBytes(ivKeyPath, ivKeybytes);
                     Crypto crypto = new Crypto();
                     string curUserName = tb_username.Text;
                     MessageBox.Show($"{curUserName}");
                     string directoryPath = Path.Combine("D:\\", $"{curUserName}_Key");
                     string privateKeyPath = Path.Combine(directoryPath, $"{curUserName}_private_key.pem");
-                    crypto.DecryptAESkey(AESkey_path,senderPubKey_path, privateKeyPath, tempFolder);
+                    crypto.DecryptAESkey(AESkey_path, senderPubKey_path, privateKeyPath, folder);
+                    crypto.DecryptVideo(encryptedVideoPath, AESkey_path, AESiv_path);
                 }
             }
             catch { }
@@ -355,6 +363,8 @@ namespace ProjectGUI
                     string aesIV = videoMetadata.IV;
                     string senderPubKey = videoMetadata.sender_ECC_Pub_Key;
                     string ivKey = videoMetadata.IV_key;
+
+                    
                     return (false, aesKey, aesIV,senderPubKey,ivKey); // Key and IV exist and are not null
                 }
                 return (true, null, null, null,null); // If no Key or IV found, assume AES fields are null
